@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('./templates/head.html')%>
+    <link rel="stylesheet" href="../css/maratona.css">
+</head>
+<body>
+        <%- include('./templates/header.html') %>
+
+        <main>
+            <div class="container py-5">
+                <div class="rounded p-4 mb-4 text-center" style="background-color: black;">
+                    <h1 class="display-5 fw-bold" style="color:#4EBF5F">Maratona de Matemática</h1>
+                    <p class="lead mb-0 text-light">Resultados por etapa e modalidades</p>
+                </div>
+                <!-- 1ª Etapa -->
+                <section class="mb-4">
+                    <h3 class="h5 mb-3">1ª ETAPA</h3>
+                    <div class="row gy-4">
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tabuada - 1 Minuto</h5>
+                                    <div class="table-responsive table-scroll">
+                                        <table class="table table-sm table-striped mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Nº</th>
+                                                    <th>Nome</th>
+                                                    <th>Erros</th>
+                                                    <th>Acertos</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% let c = 0 %>
+                                                <% data.forEach((d, i) => { %>
+                                                    <% if (d.jogoNome == 'tabuada' && d.jogoId == '1') { %>
+                                                    <% c++ %>
+                                                    <tr>
+                                                        <td><%= c %></td>
+                                                        <td><%= d.nome %></td>
+                                                        <td><%= d.erros %></td>
+                                                        <td><%= d.pontuacao %></td>
+                                                    </tr>
+                                                    <% } %>
+                                                <% }) %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Questionário - Maratona de Matemática</h5>
+                                    <div class="table-responsive table-scroll">
+                                        <table class="table table-sm table-striped mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Nº</th>
+                                                    <th>Nome</th>
+                                                    <th>Acertos</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% c = 0 %>
+                                                <% data.forEach((d, i) => { %>
+                                                    <% if (d.jogoNome == 'questionario' && d.jogoId == "27") { %>
+                                                    <% c++ %>
+                                                    <tr>
+                                                        <td><%= c %></td>
+                                                        <td><%= d.nome %></td>
+                                                        <td><%= d.pontuacao %></td>
+                                                    </tr>
+                                                    <% } %>
+                                                <% }) %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Resultados 1ª Etapa</h5>
+                                    <div class="table-responsive table-scroll">
+                                        <table class="table table-sm table-bordered mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Nº</th>
+                                                    <th>Nome</th>
+                                                    <th>Tabuada</th>
+                                                    <th>Questionário</th>
+                                                    <th>Média Final</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="resultados">
+                                                <!-- preenchido por script ou lógica no servidor -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2ª Etapa -->
+                <section class="mb-4">
+                    <h3 class="h5 mb-3">2ª ETAPA</h3>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Caixas - Perguntas IFRS</h5>
+                                    <div class="table-responsive table-scroll">
+                                        <table class="table table-sm table-striped mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Nº</th>
+                                                    <th>Nome</th>
+                                                    <th>Acertos</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% c = 0 %>
+                                                <% data.forEach((d, i) => { %>
+                                                    <% if (d.jogoNome == 'caixas' && d.jogoId == "1") { %>
+                                                    <% c++ %>
+                                                    <tr>
+                                                        <td><%= c %></td>
+                                                        <td><%= d.nome %></td>
+                                                        <td><%= d.pontuacao %></td>
+                                                    </tr>
+                                                    <% } %>
+                                                <% }) %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3ª Etapa -->
+                <section class="mb-4">
+                    <h3 class="h5 mb-3">3ª ETAPA</h3>
+                    <% let mmObject = {} %>
+                    <% data.forEach((d) => { %>
+                        <% if (d.jogoNome == 'maior-menor' && d.jogoId == "1") { %>
+                            <% if (mmObject[d.nome]) {%>
+                                <% mmObject[d.nome]++ %>
+                            <%} else {%>
+                                <% mmObject[d.nome] = 1 %>
+                            <%}%>
+                        <%}%>
+                    <%})%>
+
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Maior e Menor</h5>
+                                    <div class="table-responsive table-scroll">
+                                        <table class="table table-sm table-striped mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Nº</th>
+                                                    <th>Nome</th>
+                                                    <th>Vitórias</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% c = 0 %>
+                                                <% for (const u in mmObject) {%>
+                                                    <% c++ %>
+                                                    <tr>
+                                                        <td><%= c %></td>
+                                                        <td><%= u %></td>
+                                                        <td><%= mmObject[u] %></td>
+                                                    </tr>
+                                                <% } %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <%- include('./templates/footer.html') %>
+        <script>const test = '<%- JSON.stringify(data) %>';</script>
+        <script src="../scripts/site/maratona.js"></script>
+</body>
+</html>

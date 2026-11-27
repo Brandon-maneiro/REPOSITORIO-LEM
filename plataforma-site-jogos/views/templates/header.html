@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
+    <div class="container-fluid position-relative">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="/imagens/icones/lem_site_icon2.png" alt="LEM" width="56" height="56" class="d-inline-block align-top">
+            <span class="ms-3 fs-5 fw-semibold text-dark">Site Jogos LEM</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav position-absolute top-50 start-50 translate-middle mb-2 mb-lg-0 align-items-center d-none d-lg-flex">
+                <li class="nav-item">
+                    <a class="nav-link text-success fs-4 fw-bold" href="/">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success fs-4 fw-bold" href="/sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success fs-4 fw-bold" href="/horarios">Horários</a>
+                </li>
+            </ul>
+            
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-center d-lg-none">
+                <li class="nav-item">
+                    <a class="nav-link text-success fs-4 fw-bold" href="/">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success fs-4 fw-bold" href="/sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success fs-4 fw-bold" href="/horarios">Horários</a>
+                </li>
+            </ul>
+
+            <div class="d-flex align-items-center justify-content-center ms-auto">
+                <a href="/login" class="d-flex align-items-center text-decoration-none">
+                    <img src="/imagens/icones/perfil2.png" alt="Perfil" width="44" height="44" class="rounded-circle <%= typeof(user) !== 'undefined' ? 'filtro-verde' : '' %>">
+                </a>
+                <% if (typeof(user) !== "undefined") { %>
+                    <span class="navbar-text ms-2 d-none d-lg-inline text-dark ">Bem vindo(a) <%= user.split(' ')[0] %>!</span>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

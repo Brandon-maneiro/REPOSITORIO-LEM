@@ -1,0 +1,231 @@
+#tabuada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    > h2 {
+        width: 25%;
+    }
+    #topo {
+        height: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+        color: white;
+        background-color: #3F3F3F;
+        padding: 18px;
+        border-radius: 8px;
+        > div {
+            display: flex;
+            gap: 6px;
+        }
+    }
+    #gameBox {
+        color: white;        
+        height: 55vh;
+        aspect-ratio: 11/12;
+        border: 2px solid #3F3F3F;
+        background-color: #111111;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        
+
+        > div {
+            display: flex;
+            width: 100%;
+            height: 60%;
+            flex-wrap: wrap;            
+        }
+        #perguntaDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: larger;
+            align-self: center;
+            justify-self: center;
+            width: 100%;
+            background-color: rgb(0, 70, 0);
+            border: 0.3vmin solid #1f1f1f;
+            border-radius: 1vmin;
+        }
+        #opcoes {
+            display: grid;
+            grid-template-areas: 
+            'r b'
+            'g y'
+            '. .'
+            'e e';
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 1fr 1fr 1% 1fr;
+            gap: 0.3rem;
+            width: 90%;
+            > input {
+                border: none;
+                color: white;
+                font-size: larger;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            & .e{
+                grid-area: e;
+                flex-basis: 100%;
+                margin-top: 20px;
+                height: 30px;
+                text-align: center;
+                font-size: small;
+                background-color: #3F3F3F;
+            }
+        }        
+        & .r{
+            grid-area: r;
+            background-color: red;
+            &:hover {
+                background-color: rgb(121, 0, 0);
+            }
+        }
+        & .b{
+            grid-area: b;
+            background-color: rgb(0, 17, 255);
+            &:hover {
+                background-color: rgb(0, 10, 143);
+            }
+        }
+        & .g{
+            grid-area: g;
+            background-color: rgb(0, 180, 0);
+            &:hover {
+                background-color: rgb(0, 104, 0);
+            }
+        }
+        & .y{
+            grid-area: y;
+            background-color: rgb(199, 199, 0);
+            &:hover {
+                background-color: rgb(122, 122, 0);
+            }
+        }
+
+    }    
+}
+
+#desafios-container {
+    border: 0.2vmin solid black;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    margin-left: 50vw;
+    aspect-ratio: 7/12;
+    border-radius: 2vmin;
+    padding: 1%;
+    gap: 1%;
+    background-color: #111111;
+    & div {
+        color: var(--terciary-color);
+        font-weight: bolder;
+        margin: 5%;
+    }
+    & input {
+        width: 100%;
+        padding: 5% 3%;
+        font-size: 1rem;
+        color: var(--primary-color);
+        background-color: var(--fourth-color);
+        border: none;
+        border-radius: 0.5vmin;        
+    }
+    & .desafio:hover {
+        cursor: pointer;
+        filter: brightness(120%) saturate(180%) hue-rotate(160deg);    
+    }
+    & .selecionado {
+        filter: brightness(130%) hue-rotate(120deg);
+    }
+    & #comecar {
+        margin: 5%;
+        width: 60%;
+        background-color: var(--terciary-color);
+        color: var(--secondary-color);
+        &:hover {
+            cursor: pointer;
+            filter: contrast(200%);
+        }
+    }    
+}
+
+#resultado-container {
+    position: absolute;
+    background-color: var(--secondary-color);
+    opacity: 90%;
+    width: 25rem;
+    aspect-ratio: 4/3;
+    border: 0.3vmin solid black;
+    border-radius: 2vmin;
+    padding: 2%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--primary-color);
+    & #titulo {
+        font-size: 1.8rem;
+        color: var(--terciary-color);
+        font-weight: bolder;
+    }
+    & #info-grid {
+        display: grid;
+        grid-template-areas: 
+        'a  e  t'
+        'al el tl';
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;        
+        width: 70%;
+        gap: 5%;
+    }
+    & #acertosPontos {
+        grid-area: a;
+    }   
+    & #errosPontos {
+        grid-area: e;
+    }
+    & #tempoFinal {
+        grid-area: t;
+    }
+    & #acertosLabel {
+        grid-area: al;
+    }
+    & #errosLabel {
+        grid-area: el;
+    }
+    & #tempoLabel {
+        grid-area: tl;
+    }
+    .circleBorder {
+        background-color: var(--terciary-color);
+        color: var(--secondary-color);
+        padding: 15%;
+        border-radius: 4vmin;
+        font-weight: bolder;
+    }
+    & a {
+        text-decoration: none;
+        color: var(--fourth-color);
+        font-size: 1rem;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: var(--fourth-color);
+        }
+    }
+}

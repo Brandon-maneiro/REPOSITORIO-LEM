@@ -1,0 +1,110 @@
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Estilização dos inputs e selects */
+.equation-input {
+    width: 100px;
+    height: 60px;
+    font-size: 2rem;
+    text-align: center;
+    border: 3px solid var(--terciary-color);
+    border-radius: 15px;
+    background-color: #fff;
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.equation-input:focus {
+    box-shadow: 0 0 15px rgba(78, 191, 95, 0.5);
+    border-color: var(--terciary-color);
+    transform: scale(1.05);
+}
+
+.equation-select {
+    width: 80px;
+    height: 60px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 3px solid var(--terciary-color);
+    border-radius: 15px;
+    background-color: #fff;
+    color: var(--secondary-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%234EBF5F' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.equation-select:focus {
+    box-shadow: 0 0 15px rgba(78, 191, 95, 0.5);
+    border-color: var(--terciary-color);
+}
+
+/* Valores estáticos e símbolos */
+.equation-value, .equation-symbol, .equation-result {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    padding: 0 10px;
+}
+
+.equation-result {
+    color: var(--terciary-color);
+    font-size: 3rem;
+}
+
+/* Botão Confirmar */
+#btn-confirmar {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+#btn-confirmar:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    filter: brightness(1.1);
+}
+
+#btn-confirmar:active {
+    transform: translateY(1px);
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .equation-container {
+        gap: 10px !important;
+    }
+    
+    .equation-input {
+        width: 70px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .equation-select {
+        width: 70px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .equation-value, .equation-symbol, .equation-result {
+        font-size: 1.8rem;
+    }
+    
+    .equation-result {
+        font-size: 2.2rem;
+    }
+}

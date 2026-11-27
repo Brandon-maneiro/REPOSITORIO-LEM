@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../../templates/head.html')%>
+    <script src="../../../scripts/jogos/abracaixa.js" defer type="module"></script>
+    <link href="../../../css/abracaixa.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../../templates/header.html') %>
+
+        <main class="main-caixas-conteiner">            
+            <div id="main-container">
+            <div id="resultado-container">
+
+                <div id="topo">PARABÉNS</div>
+                <div id="pontuacao"><div id="acerto">10</div>/<div id="total">10</div></div>
+
+                <a href="/">Voltar ao início</a>
+
+            </div>
+
+            <a href="/caixas" id="voltar-pagina">voltar</a>
+            <div id="caixa">
+                <div id="perguntas-container">
+                    <div class="pergunta-div">
+                        <div class="capa fechado"><img src="../../imagens/icones/lem_site_icon2.png">                            
+                        </div>
+                        <div class="pergunta"><p></p></div>
+                    </div>
+                    <div class="pergunta-div">
+                        <div class="capa fechado"><img src="../../imagens/icones/lem_site_icon2.png"></div>
+                        <div class="pergunta"><p></p></div>
+                    </div>
+                    <div class="pergunta-div">
+                        <div class="capa fechado"><img src="../../imagens/icones/lem_site_icon2.png"></div>
+                        <div class="pergunta"><p></p></div>
+                    </div>
+                    <div class="pergunta-div">
+                        <div class="capa fechado"><img src="../../imagens/icones/lem_site_icon2.png"></div>
+                        <div class="pergunta"><p></p></div>
+                    </div>
+                    <div class="pergunta-div">
+                        <div class="capa fechado"><img src="../../imagens/icones/lem_site_icon2.png"></div>
+                        <div class="pergunta"><p></p></div>
+                    </div>
+                    <div class="pergunta-div">
+                        <div class="capa fechado"><img src="../../imagens/icones/lem_site_icon2.png"></div>
+                        <div class="pergunta"><p></p></div>
+                    </div>
+                    <div class="pergunta-div">
+                        <div class="capa fechado"><img src="../../imagens/icones/lem_site_icon2.png"></div>
+                        <div class="pergunta"><p></p></div>
+                    </div>
+                    <div class="pergunta-div">
+                        <div class="capa fechado"><img src="../../imagens/icones/lem_site_icon2.png"></div>
+                        <div class="pergunta"><p></p></div>
+                    </div>
+                </div>
+                <div id="perguntando-container">
+                    <div id="pergunta"></div>
+                    <div class="respostas a"></div>
+                    <div class="respostas b"></div>
+                    <div class="respostas c"></div>
+                    <div class="respostas d"></div>
+                </div>
+                <img src="../../imagens/icones/fullscreen.png" id="fullscreen">
+                <img src="../../imagens/icones/exit_fullscreen.png" id="exit-fullscreen" class="hidden">
+                <img src="../../imagens/icones/flecha.png" class="voltar hidden">
+                <img src="../../imagens/icones/lem_fundo_branc_semBG.png" id="lem-icon">                
+            </div>
+        </div>
+        </main>
+
+        <%- include('../../templates/footer.html') %>
+</body>
+
+</html>

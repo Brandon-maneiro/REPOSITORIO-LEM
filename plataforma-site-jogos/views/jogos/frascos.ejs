@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link rel="stylesheet" href="../../css/frascos.css">
+    <script defer src="../../scripts/jogos/frascos.js" type="module"></script>
+</head>
+<body>
+        <%- include('../templates/header.html') %>
+
+        <main>
+            <div id="main-container">
+
+                <div id="frascos-container">
+
+                    <div class="frasco">
+                    </div>
+                    <div class="frasco">
+                    </div>
+                    <div class="frasco">                      
+                    </div>
+                    <div class="frasco">
+                    </div>                    
+                    <div class="frasco">                        
+                    </div>
+
+                    <div class="nivel">
+                        <input type="button" value="-" class="menos">
+                        <div class="atual">0</div>
+                        <input type="button" value="+" class="mais">
+                        <input type="button" value="Iniciar" class="iniciar">
+                    </div>
+                    
+                    
+
+                    </div>
+
+                    <dialog class="vitoria-container">
+                        <h1>PARABÉNS!</h1>
+                        <button class="botao-fechar-parabenizacao"> <img src="../../../imagens/icones/xis.png " alt="botão de fechar"> </button>
+                        <a class="continuar-button" id="links-botao-parabenizacao" title="Próximo nível"><img src="../../imagens/icones/proximo_vazio.png"></a>
+                        <a class="recomecar-button" id="links-botao-parabenizacao" title="Recomeçar nível"><img src="../../imagens/icones/recarrega.png"></a>
+                        <a id="links-botao-parabenizacao" href="/"><img src="../../imagens/icones/casa.png"></a>
+                    </dialog>
+
+                </div>
+            </div>
+            
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+</html>

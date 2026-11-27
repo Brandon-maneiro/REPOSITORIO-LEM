@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <link rel="stylesheet" href="../../css/tetris.css">
+        <script defer src="../../scripts/jogos/tetris.js"></script>
+</head>
+
+<body>
+    <%- include('../templates/header.html') %>
+
+        <main id="tetris-main-container">
+            
+            <div id="main-container">
+                <div id='tetris-container'>
+                    <div id="segurar-container">
+                        <h3>SEGURANDO</h3>
+                        <div class="slot"></div>
+                    </div>
+                    <div id="pontuacao-container">
+                        <h3 id="pontos">0</h3>
+                    </div>
+                    <canvas id="tetris-canvas"></canvas>
+                    <div id="proximo-container">
+                        <h3>PRÓXIMO</h3>
+                        <div class="slot"></div>
+                        <div class="long-slot"></div>
+                    </div>                    
+                </div>
+                <div id="fim-container">
+                    <div id="topo">FIM DE JOGO</div>
+                    <div id="pontos">000000</div>
+                    <input type="button" value="Jogar Novamente" id="jogar-novamente">
+                </div>
+            </div>
+
+            <div id="como-jogar-container">
+                <div id="como-jogar">
+                    COMO JOGAR
+                </div>
+                <div id="jogo-descricao">
+                    Faça o máximo de pontos que conseguir, sempre que uma linha é completada o jogador recebe uma pontuação.
+                </div>
+                <div id="controles">
+                    CONTROLES
+                </div>
+                <div id="controles-teclas">
+                    Mover para os lados: ⬅ ➡; Rotacionar: ⬆; Descer rapidamente: ⬇; Guardar peça: C; Pausar o jogo: P;
+                </div>
+                </div>
+            </div>
+
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+</html>

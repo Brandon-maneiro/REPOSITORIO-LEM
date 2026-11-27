@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link href="../css/maiormenor.css" rel="stylesheet">
+</head>
+<body>
+    
+    <%- include('../templates/header.html') %>
+
+    <main>
+        <div id="banner">
+            <div id="titulo">FRAÇÕES</div>
+            <div id="texto">Descubra e calcule as diversas frações</div>
+        </div>
+        
+        <div id="main-container">
+
+            <div id="pesquisa-container">
+                <input type="text" placeholder="Procurar pelo jogo" id="pesquisar-input">
+                <div><select id="genero" name="genero">
+                    <option>Gênero</option>
+                </select></div>
+                <img src="../imagens/icones/lupa.png">
+            </div>
+
+            <div id="jogos-container">
+            
+                <div class="jogo">
+                    <a class="img-anchor" href="/descubra-fracoes"><img src="../../imagens/capas/fracoes/descubra_1.png"></a>
+                    <a class="descricao-anchor" href="/descubra-fracoes"><div class="titulo line">Descubra as frações</div><div class="autor">João</div></a>
+                </div>
+
+                <div class="jogo">
+                    <a class="img-anchor" href="/descubra-fracoes-2"><img src="../../imagens/capas/fracoes/descubra_2.png"></a>
+                    <a class="descricao-anchor" href="/descubra-fracoes-2"><div class="titulo line">Descubra as frações 2</div><div class="autor">João</div></a>
+                </div>
+
+                <div class="jogo">
+                    <a class="img-anchor" href="/calcule-fracoes"><img src="../../imagens/capas/fracoes/calcule_1.png"></a>
+                    <a class="descricao-anchor" href="/calcule-fracoes"><div class="titulo line">Calcule as frações</div><div class="autor">João</div></a>
+                </div>
+
+                <div class="jogo">
+                    <a class="img-anchor" href="/calcule-fracoes-2"><img src="../../imagens/capas/fracoes/calcule_2.png"></a>
+                    <a class="descricao-anchor" href="/calcule-fracoes-2"><div class="titulo line">Calcule as frações 2</div><div class="autor">João</div></a>
+                </div>
+            
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('../templates/footer.html') %>
+
+</body>
+</html>

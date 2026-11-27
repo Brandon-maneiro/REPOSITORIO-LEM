@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <link href="../../css/jogo2048.css" rel="stylesheet">
+        <script src="../../scripts/jogos/jogo2048.js" defer></script>
+</head>
+
+<body>
+
+    <%- include('../templates/header.html') %>
+
+        <main>
+
+            <div id="main-container">
+                <div id="topo">Movimentos: <div id="moves">0</div>Pontuação: <div id="pontos">4</div>
+                </div>
+                <div id="div2048">
+                    <div class="rows">
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                    </div>
+                    <div class="rows">
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                    </div>
+                    <div class="rows">
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                    </div>
+                    <div class="rows">
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                        <div class="bloco"></div>
+                    </div>
+                </div>
+
+                <div id="fim-container">
+
+                    <div id="fim-titulo">Tente Novamente!</div>
+                    <div id="grid-pontuacao">
+                        <div id="movimentos">10</div>
+                        <div id="pontos">10</div>
+                        <div id="movimentosText">Movimentos</div>
+                        <div id="pontosText">Pontos</div>
+                    </div>
+                    <input type="button" value="Jogar novamente" id="jogar-novamente">
+                    <a href="/ranks/2048">Ver rank geral</a>
+
+                </div>
+
+            </div>
+
+            <div id="como-jogar-container">
+                <div id="como-jogar">
+                    COMO JOGAR
+                </div>
+                <div id="jogo-descricao">
+                    Sempre que o jogador move, todas as peças se movem. Quando duas peças de mesmo valor colidem,
+                     elas se tornam uma só com o valor entre elas somado. O objetivo do jogo é atingir o valor 2048 em uma única peça.
+                </div>
+                <div id="controles">
+                    CONTROLES
+                </div>
+                <div id="controles-teclas">
+                    ⬆ ➡ ⬇ ⬅ 
+                </div>
+                </div>
+            </div>
+
+        </main>
+
+        <%- include('../templates/footer.html') %>
+
+</body>
+
+</html>

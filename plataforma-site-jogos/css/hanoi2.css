@@ -1,0 +1,156 @@
+#hanoi-main-container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#hanoi-container {
+    width: 50%;
+    height: 80%;
+    background-color: skyblue;
+    display: flex;    
+    justify-content: space-around;
+    align-items: end;
+    border: 0.3vmin solid #1f1f1f;
+    border-radius: 1vmin;
+    .pilar {
+        height: 50%;
+        width: 8%;
+        background-color: peru;
+        display: flex;
+        flex-direction: column;        
+        justify-content: end;
+        position: relative;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .placing:hover {
+        z-index: 1;
+        outline: 2px solid #1f1f1f;
+        outline-offset: -2px;
+        cursor: pointer;
+    }
+    .bloco {
+        height: 15%;
+        border-radius: 8px;
+        border: 1px solid #1f1f1f;
+        z-index: 2;
+        &:nth-child(1){
+            z-index: 3;
+            &:hover {
+                outline: 3px solid blue;
+                z-index: 3;
+                cursor: pointer;
+            }
+        }        
+    }
+    .n1 {
+        width: 180%;
+        background-color: red;
+    }
+    .n2 {
+        width: 220%;
+        background-color: grey;
+    }
+    .n3 {
+        width: 260%;
+        background-color: yellow;
+    }
+    .n4 {
+        width: 300%;
+        background-color: lightseagreen;
+    }
+    .n5 {
+        width: 340%;
+        background-color: green;
+    }
+    .n6 {
+        width: 380%;
+        background-color: purple;
+    }
+}
+
+#topo {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    width: 70%;
+    margin-bottom: 1%;
+    justify-content: center;
+    #instrucao{
+        text-align: justify;
+        padding: 20px;       
+    }        
+    > div{
+        display: flex;
+        gap: 5px;            
+        background-color: #3F3F3F;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+    }
+}
+
+#resultado-container {
+    position: absolute;
+    background-color: var(--secondary-color);
+    opacity: 90%;
+    width: 25rem;
+    aspect-ratio: 4/3;
+    border: 0.3vmin solid black;
+    border-radius: 2vmin;
+    padding: 2%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--primary-color);
+    z-index: 3;
+    & #titulo {
+        font-size: 1.8rem;
+        color: var(--terciary-color);
+        font-weight: bolder;
+    }
+    & #info-grid {
+        display: grid;
+        grid-template-areas: 
+        'a  t'
+        'al tl';
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;        
+        width: 70%;
+        gap: 5%;
+    }
+    & #passosBolha {
+        grid-area: a;
+    }  
+    & #tempoBolha {
+        grid-area: t;
+    }
+    & #passosLabel {
+        grid-area: al;
+    }
+    & #tempoLabel {
+        grid-area: tl;
+    }
+    .circleBorder {
+        background-color: var(--terciary-color);
+        color: var(--secondary-color);
+        padding: 15%;
+        border-radius: 4vmin;
+        font-weight: bolder;
+    }
+    & a {
+        text-decoration: none;
+        color: var(--fourth-color);
+        font-size: 1rem;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-color: var(--fourth-color);
+        }
+    }
+}

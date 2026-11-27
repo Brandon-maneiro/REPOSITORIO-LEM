@@ -1,0 +1,145 @@
+#velhaGameDiv {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    .player {
+        width: 16%;
+        height: 23vw;
+        border: 1px solid black;
+        background-color: #3b3b3b;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        overflow: hidden;
+        > h3 {            
+            flex-basis: 28%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            border-bottom: 1px solid black;
+            background-color: rgb(64, 160, 110);
+            font-size: 2vw;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }   
+        > h4 {
+            flex-basis: 10%;
+            align-self: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5%;
+            gap: 1%;
+            font-size: 1.7vw;
+            margin-bottom: 0vw;
+        }
+    }
+    .movimentos{    
+        font-size: 3vw !important;
+    }
+    .vitorias{
+        font-size: 3vw !important;
+        padding-bottom: 5%;
+    }
+    
+
+    .escolha {
+        border: 0.3vmin solid #1f1f1f;
+        border-radius: 3vmin;        
+        aspect-ratio: 1/2;
+        width: 7vw;        
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        color: white;
+        -webkit-text-stroke: 0.15vw;
+        -webkit-text-stroke-color: black;
+        > div {
+            font-size: 3.5vw;
+            width: 100%;
+            text-align: center;
+            flex-basis: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        > div:nth-child(1) {
+            border-bottom: 2px solid #1f1f1f;        
+        }
+        .circulo {
+            background-color: rgb(60, 164, 224);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .xis {
+            background-color: rgb(247, 2, 2);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+#velhaDiv {
+    aspect-ratio: 1/1;
+    width: 28%;    
+    border: 0.3vmin solid #1f1f1f;
+    border-radius: 2vmin;
+    padding: 1%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;    
+    grid-template-rows: 33% 33% 33%;
+    .espaco {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5vw;
+        user-select: none;
+    }
+    .espaco:nth-child(1){
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .espaco:nth-child(2){
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .espaco:nth-child(3){
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .espaco:nth-child(4){
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .espaco:nth-child(5){
+        border: 1px solid black;
+    }
+    .espaco:nth-child(6){
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .espaco:nth-child(7){
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+    .espaco:nth-child(8){
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+    }
+    .espaco:nth-child(9){
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+
+<head>
+    <%- include('templates/head.html')%>
+</head>
+
+<body>
+    <%- include('templates/header.html') %>
+        <div class="container-fluid">
+            <div class="row  p-5" id="banner">
+                <div class="col">
+                    <h1 class="display-1  fw-bold" id="titulo-jogoslem">JOGOS DO LEM</h1>
+                    <p class="text-light text-break h-sm fs-5 mt-5">Crie e divirta-se em diferentes jogos que irão
+                        testar <br> sua capacidade e raciocínio lógico</p>
+                    <a class="btn btn-success btn-lg fw-bold mt-4" href="/criarJogos">Crie seus Jogos</a>
+                </div>
+            </div>
+            <div class="row bg-light d-flex justify-content-center">
+                <div class="col-12 text-center my-5">
+                    <a href="/maratona"><img src="/imagens/icones/maratona_de_matematica_2023.png"
+                            class="img-thumbnail " id="maratona"></a>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                    <div class="input-group mb-3 dropdown">
+                        <span class="input-group-text" id="basic-addon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0">
+                                </path>
+                            </svg>
+                        </span>
+                        <input id="pesquisar-input" type="text" class="form-control"
+                            aria-label="Text input with dropdown button" placeholder="Procure por um jogo">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">s action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row bg-light">
+                <div class="row row-cols-1  g-4 mx-auto mb-4">
+                    <% for (const jogo in jogos) { %>
+                        <div class="col-sm-4 col-lg-3 jogo"> 
+                            <div class="card border-0 border-bottom h-100">
+                                <div class="card-image-wrapper">
+                                    <a href="/<%=jogos[jogo].href%>">
+                                        <img src="<%=jogos[jogo].imagem %>" class="card-img-top" alt="<%= jogos[jogo].nome %>">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="me-2 flex-grow-1">
+                                            <a class="card-text fs-5 fw-bold text-success mb-0 text-decoration-none game-title titulo"
+                                                href="/<%=jogos[jogo].href%>" title="<%= jogos[jogo].nome %>">
+                                                <%= jogos[jogo].nome %>
+                                            </a>
+                                        </div>
+                                        <div class="ms-2 flex-shrink-0 d-flex align-items-center">
+                                            <!-- ícone de ranking: reduzido em telas pequenas -->
+                                            <% if (jogos[jogo].rank)  {%>
+                                                <a class="card-text mb-0" href="/ranks/<%= jogos[jogo].href %>">
+                                                    <img src="/imagens/icones/rank.png" class="rank-icon" alt="Rank">
+                                                </a>
+                                            <% } %>
+
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <span class="card-text fs-6 text-light d-block">
+                                            <%= jogos[jogo].feito %>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }%>
+                </div>
+            </div>
+        </div>
+        <%- include('templates/footer.html') %>
+
+
+</body>
+
+</html>

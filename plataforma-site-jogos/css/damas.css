@@ -1,0 +1,148 @@
+#damas-container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#damas-tabuleiro {    
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+
+    #playerPretas, #playerBrancas {
+        width: 10%;
+        aspect-ratio: 1/1;
+        border: 8px solid grey;
+        border-radius: 50%;
+        position: relative;
+
+        &::after {
+            content: "";
+            outline: 5px solid grey;
+            width: 80%;
+            height: 80%;
+            transform: translate(12%, 12%);
+            border-radius: 50%;
+            position: absolute;
+        }
+    }
+
+    #playerPretas {
+        background-color: black;
+    }
+
+    #playerBrancas {
+        background-color: white;
+    }
+
+    .jogando {
+        outline: 8px solid yellow;
+        transform: scale(110%);
+    }
+}
+
+#rotacao {
+    position: absolute;
+    width: 6vmin;
+    right: 0;
+    margin-top: 50vh;
+    margin-right: 31vw;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#damas-grid {
+    aspect-ratio: 1/1;
+    width: 30%;
+    border: 20px solid #1f1f1f;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 102%;
+        height: 102%;
+        margin-left: -1%;
+        margin-top: -1%;
+        outline: 4px solid white;
+    }
+
+    .black,
+    .white {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .black {
+        background-color: rgb(182, 63, 63);
+    }
+
+    .white {
+        background-color: white;
+    }
+
+    .pedra {
+        position: relative;
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+        outline: 3px solid grey;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            outline: 3px solid grey;
+            transform: translate(21%, 21%);
+            border-radius: 50%;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .branca {
+        background-color: white;
+    }
+    .preta {
+        background-color: black;
+    }
+
+    .move {
+        background-color: rgb(0, 0, 255);
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.rotate1 {
+    animation: rotation 0.6s 1 linear;
+    transform: rotate(180deg);
+}
+
+.rotate2 {
+    animation: rotationBack 0.6s 1 linear;
+    transform: rotate(0);
+}
+
+@keyframes rotation {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(180deg);}
+}
+
+@keyframes rotationBack {
+    0% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}

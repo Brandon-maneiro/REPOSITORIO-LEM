@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../../templates/head.html')%>
+    <link rel="stylesheet" href="../../css/fracao.css">
+    <script defer src="../../../scripts/jogos/calcule-fracao.js"></script>
+</head>
+<body>
+        <%- include('../../templates/header.html') %>
+
+        <main>
+            <div id="main-container">
+                <div class="fracoes-main">
+                    <div class="duvida-container">
+                        ?
+                        <div class="duvida-texto invisivel">
+                            <div class="fechar">X</div>
+                            <div class="topo">Para resolver as frações é necessário:</div>
+
+                            <div class="categoria">Soma e Subtração:</div>
+                                <div class="texto">Equilibre as frações descobrindo seu MMC. Para descobrir o MMC, basta multiplicar as bases.
+                                Divida o MMC com cada denominador e, o resultado, multiplique pelo numerador.
+                                Agora, com apenas um denominador sendo o MMC, faça as operações normalmente utilizando os valores calculados.</div>
+                            
+                            <div class="categoria">Multiplicação:</div>
+                                <div class="texto">Na multiplicação, basta multiplicar os numeradores pelos outros numeradores e, multiplicar
+                                os denominadores pelos outros denominadores. </div>
+                            
+                            <div class="categoria">Divisão:</div>
+                                <div class="texto">Na divisão, troque o numerador com o denominador da fração que está sendo dividida e então faça a multiplicação. </div>
+                            <div class="aviso">
+                                <div class="caixa verde"></div>
+                                <div>Acertou</div>
+                                <div class="caixa amarelo"></div>
+                                <div>Incompleto</div>
+                                <div class="caixa vermelho"></div>
+                                <div>Errado</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fracao-container pintado">
+                        <div class="resultado-container">
+                            <input type="number" class="numerador">
+                            <div class="barra"></div>
+                            <input type="number" class="denominador">                            
+                            <div class="equivalente-inferior">-</div>
+                            <div class="equivalente-superior">+</div>
+                        </div>
+                    </div>
+                    <div class="operacoes">+</div>
+                    <div class="fracao-container pintavel">                        
+                        <div class="quantidade-container">0</div>
+                        <div class="setas-container">
+                            <img src="../../../imagens/icones/triangulo_cheio.png" class="triangulo_cima">
+                            <img src="../../../imagens/icones/triangulo_cheio.png" class="triangulo_baixo">
+                        </div>
+                        <div class="resultado-container">
+                            <input type="number" class="numerador">
+                            <div class="barra"></div>
+                            <input type="number" class="denominador">                            
+                            <div class="equivalente-inferior">-</div>
+                            <div class="equivalente-superior">+</div>
+                        </div>                    
+                        
+                    </div>
+                    <div class="operacoes">=</div>
+                    <div class="fracao-container pintado">
+                        <div class="resultado-container">
+                            <input type="number" class="numerador">
+                            <div class="barra"></div>
+                            <input type="number" class="denominador">                            
+                            <div class="equivalente-inferior">-</div>
+                            <div class="equivalente-superior">+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <dialog class="vitoria-container">
+                    <h1>FRAÇÕES CORRETAS!</h1>
+                    <button class="botao-fechar-parabenizacao"> <img src="../../../imagens/icones/xis.png " alt="botão de fechar"> </button>
+                    <input type="button" value="CONTINUAR" class="reset-parabenizacao">
+                    
+                        <div class="vitoria-container-links">
+                            <h3>MAIS JOGOS DE FRAÇÃO</h3>
+                            
+                            <a href="/descubra-fracoes" class="links-container-vitoria">Descubra Frações</a>
+                            <a href="/descubra-fracoes-2" class="links-container-vitoria">Descubra Frações 2</a>
+                            <a href="/calcule-fracoes" class="links-container-vitoria">Calcule as Frações</a>
+                        </div>
+                </dialog>   
+
+                <div class="base">
+                    <img src="../../imagens/icones/lixo_pixelart.png" class="lixo">
+                    <input type="button" value="PRONTO" class="finalizar">
+                    <img src="../../imagens/icones/recarrega.png" class="reset">
+                </div>
+            </div>
+            
+        </main>
+
+        <%- include('../../templates/footer.html') %>
+</body>
+</html>

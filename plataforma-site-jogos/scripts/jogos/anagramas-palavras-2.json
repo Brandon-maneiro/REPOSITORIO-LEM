@@ -1,0 +1,26 @@
+{
+  "easy": [
+    "CEU", "LUA", "MAR", "LUZ", "MAE", 
+    "PAZ", "GOL", "RIO", "SIM", "PAO", 
+    "FIM", "OLA", "PAI", "NOS", "FLOR", 
+    "SOM", "BOI", "SAL", "PES", "MAO"
+  ],
+  "medium": [
+    "CASA", "BOLA", "AMOR", "VIDA", "GATO", 
+    "MESA", "SAPO", "PATO", "VELA", "CAFE",
+    "FOGO", "JOGO", "VACA", "LIXO", "ZERO", 
+    "TREM", "AZUL", "SOFA", "IRMA", "AGUA"
+  ],
+  "hard": [
+    "ARARA", "BANANA", "BATATA", "MUSICA", "ESCOLA", 
+    "JANELA", "COMIDA", "BONECA", "TOMATE", "LAMPADA", 
+    "GARRAFA", "MENINO", "MENINA", "ARVORE", "ESPELHO", 
+    "NUVEM", "ALUNO", "LIVRO", "VIOLAO", "PASSARO"
+  ],
+  "expert": [
+    "COMPUTADOR", "ALGORITMO", "PROGRAMA", "CACHORRO", "ABACAXI", 
+    "HISTORIA", "CIENCIA", "MATEMATICA", "PORTUGUES", "BICICLETA", 
+    "GELADEIRA", "CHOCOLATE", "GEOGRAFIA", "NATUREZA", "UNIVERSO", 
+    "GUERREIRO", "BRASILEIRO", "INFINITO", "TELEFONE", "PRESENTE"
+  ]
+}

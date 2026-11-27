@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link href="../css/maiormenor.css" rel="stylesheet">
+</head>
+<body>
+    
+    <%- include('../templates/header.html') %>
+
+    <main>
+        <div id="banner">
+            <div id="titulo">MAIOR E MENOR</div>
+            <div id="texto">Muitas temáticas mas sempre um único objetivo, dizer qual o maior e o menor número</div>
+        </div>
+        
+        <div id="main-container">
+
+            <div id="pesquisa-container">
+                <input type="text" id="pesquisar-input" placeholder="Procurar pelo jogo">
+                <div><select id="genero" name="genero">
+                    <option>Gênero</option>
+                </select></div>
+                <img src="../imagens/icones/lupa.png">
+            </div>
+
+            <div id="jogos-container">
+            
+                <div class="jogo">
+                    <a class="img-anchor" href="/mm1"><img src="../imagens/capas/maiormenor/naturais.PNG"></a>
+                    <a class="descricao-anchor" href="/mm1"><div class="titulo line">Números Naturais</div><div class="autor">LEM</div></a>
+                </div>
+                <div class="jogo">
+                    <a class="img-anchor" href="/mm4"><img src="../imagens/capas/maiormenor/inteiros.PNG"></a>
+                    <a class="descricao-anchor" href="/mm4"><div class="titulo line">Números Inteiros</div><div class="autor">LEM</div></a>
+                </div>
+                <div class="jogo">
+                    <a class="img-anchor" href="/mm5"><img src="../imagens/capas/maiormenor/decimais.PNG"></a>
+                    <a class="descricao-anchor" href="/mm5"><div class="titulo line">Números Decimais</div><div class="autor">LEM</div></a>
+                </div>
+                <div class="jogo">
+                    <a class="img-anchor" href="/mm2"><img src="../imagens/capas/maiormenor/fracao.PNG"></a>
+                    <a class="descricao-anchor" href="/mm2"><div class="titulo line">Números Fracionários</div><div class="autor">LEM</div></a>
+                </div>
+                <div class="jogo">
+                    <a class="img-anchor" href="/mm3"><img src="../imagens/capas/maiormenor/divisao.PNG"></a>
+                    <a class="descricao-anchor" href="/mm3"><div class="titulo line">Divisões</div><div class="autor">LEM</div></a>
+                </div>
+                <div class="jogo">
+                    <a class="img-anchor" href="/mm6"><img src="../imagens/capas/maiormenor/notacao.PNG"></a>
+                    <a class="descricao-anchor" href="/mm6"><div class="titulo line">Notação Científica</div><div class="autor">LEM</div></a>
+                </div> 
+            
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('../templates/footer.html') %>
+
+</body>
+</html>

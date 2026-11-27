@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('templates/head.html')%>
+    <link href="../css/conta.css" rel="stylesheet">
+    <script src="../scripts/site/conta.js" defer></script>
+</head>
+<body>
+    <%- include('templates/header.html') %>
+    <main>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h4 class="card-title text-center mb-3">Entrar</h4>
+
+                            <% /* Mensagens de erro/sucesso — manter IDs usados pelo JS */ %>
+                            <div id="error-container" class="<%= errormessage ? 'alert alert-danger alert-dismissible fade show' : 'invisivel' %>" role="alert">
+                                <span id="error-message"><%= errormessage %></span>
+                                <% if (errormessage) { %>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <% } %>
+                            </div>
+
+                            <div id="success-container" class="<%= successmessage ? 'alert alert-success alert-dismissible fade show' : 'invisivel' %>" role="alert">
+                                <span id="success-message"><%= successmessage %></span>
+                                <% if (successmessage) { %>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <% } %>
+                            </div>
+
+                            <form method="post" action="/loginAction" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required>
+                                    <div class="invalid-feedback">Por favor informe um email válido.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="senha" class="form-label">Senha</label>
+                                    <input type="password" class="form-control" id="senha" name="senha" required>
+                                    <div class="invalid-feedback">Por favor informe sua senha.</div>
+                                </div>
+
+                                <div class="d-grid mb-3">
+                                    <button type="submit" class="btn btn-success">Entrar</button>
+                                </div>
+                            </form>
+
+                            <div class="text-center">
+                                <a href="/cadastro">Não possui uma conta? <strong>Cadastrar</strong></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('templates/footer.html') %>
+    <script>
+        // Bootstrap custom form validation
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+</html>

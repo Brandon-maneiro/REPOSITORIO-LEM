@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link href="../css/damas.css" rel="stylesheet">
+    <script src="../../scripts/jogos/damas.js" defer></script>    
+</head>
+<body>
+
+    <%- include('../templates/header.html') %>
+
+    <main>
+
+        <div id="damas-container">
+            <div id="damas-tabuleiro">
+                <div id="playerPretas"></div>
+                <div id="damas-grid"></div>
+                <img id="rotacao" src="../imagens/icones/rotacao.png">
+                <div id="playerBrancas" class="jogando"></div>
+            </div>
+        </div>
+        
+
+    </main>
+
+    <%- include('../templates/footer.html') %>
+    
+</body>
+</html>

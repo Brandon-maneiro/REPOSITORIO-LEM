@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../../templates/head.html')%>
+    <link rel="stylesheet" href="../../../css/fracao.css">
+    <script defer src="../../../scripts/jogos/descubra_fracao.js"></script>
+</head>
+<body>
+        <%- include('../../templates/header.html') %>
+
+        <main>
+            <div id="main-container">
+                <div class="fracoes-main">
+                    <div class="fracao-container">
+                        <div class="resultado-container">
+                            <input type="number" class="numerador">
+                            <div class="barra"></div>
+                            <input type="number" class="denominador">
+                        </div>                    
+                    </div>
+                    <div class="fracao-container">
+                        <div class="resultado-container">
+                            <input type="number" class="numerador">
+                            <div class="barra"></div>
+                            <input type="number" class="denominador">
+                        </div>                    
+                    </div>
+                    <div class="fracao-container">
+                        <div class="resultado-container">
+                            <input type="number" class="numerador">
+                            <div class="barra"></div>
+                            <input type="number" class="denominador">
+                        </div>                    
+                    </div>
+                    <div class="fracao-container">
+                        <div class="resultado-container">
+                            <input type="number" class="numerador">
+                            <div class="barra"></div>
+                            <input type="number" class="denominador">
+                        </div>                    
+                    </div>
+                    <div class="fracao-container">
+                        <div class="resultado-container">
+                            <input type="number" class="numerador">
+                            <div class="barra"></div>
+                            <input type="number" class="denominador">
+                        </div>                    
+                    </div>
+                </div>
+
+                <dialog class="vitoria-container">
+                    <h1>FRAÇÕES CORRETAS!</h1>
+                    <button class="botao-fechar-parabenizacao"> <img src="../../../imagens/icones/xis.png " alt="botão de fechar"> </button>
+                    <input type="button" value="CONTINUAR" class="reset-parabenizacao">
+                    
+                        <div class="vitoria-container-links">
+                            <h3>MAIS JOGOS DE FRAÇÃO</h3>
+                            
+                            <a href="/descubra-fracoes-2" class="links-container-vitoria">Descubra Frações 2</a>
+                            <a href="/calcule-fracoes" class="links-container-vitoria">Calcule as Frações</a>
+                            <a href="/calcule-fracoes-2" class="links-container-vitoria">Calcule as Frações 2</a>
+                        </div>
+                </dialog>
+
+                <div class="base">
+                    <img src="../../imagens/icones/lixo_pixelart.png" class="lixo">
+                    <input type="button" value="PRONTO" class="finalizar">
+                    <img src="../../imagens/icones/recarrega.png" class="reset">
+                </div>
+            </div>
+            
+        </main>
+
+        <%- include('../../templates/footer.html') %>
+</body>
+</html>

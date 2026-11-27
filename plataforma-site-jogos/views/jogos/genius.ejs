@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link href="../css/genius.css" rel="stylesheet">
+    <script src="../../scripts/jogos/genius.js" type="module" defer></script>    
+</head>
+<body>
+    
+    <%- include('../templates/header.html') %>
+
+    <main id="genius">
+
+        <div id="banner">
+            <div id="titulo">GENIUS</div>
+            <div id="texto">Memorize as cores que irão piscar e clique na ordem</div>
+        </div>
+
+        <div id="main-container">           
+
+            <div id="gameGenius">
+                <div id="cima">
+                    <div class="red rect"></div>
+                    <div class="green rect"></div>
+                </div>
+                <div id="baixo">
+                    <div class="blue rect"></div>
+                    <div class="yellow rect"></div>
+                </div>
+                <div id="centro">
+                    <p>GENIUS</p>
+                    <p id="pontos">0</p>
+                    <input type="button" value="Começar" id="startGenius">
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <%- include('../templates/footer.html') %>
+
+</body>
+</html>

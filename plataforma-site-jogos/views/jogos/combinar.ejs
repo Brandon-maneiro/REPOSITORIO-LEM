@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+</head>
+
+<body>
+    <%- include('../templates/header.html') %>
+
+        <main>
+
+            <div id="banner">
+                <div id="titulo">COMBINAR</div>
+                <div id="texto">Encaixe as cartas nas posições corretas</div>
+            </div>
+
+            <div id="main-container">
+
+                <div id="pesquisa-container">
+                    <input type="text" id="pesquisar-input" placeholder="Procurar pelo jogo">
+                    <div><select id="genero" name="genero">
+                        <option>Gênero</option>
+                    </select></div>
+                    <img src="../imagens/icones/lupa.png">
+                </div>
+
+                <div id="jogos-container">
+                    <% for (const comb of combinacoes) {%>
+                        <div class="jogo">
+                            <a class="img-anchor" href="/combinar/<%= comb.id %>"><img src="../../imagens/capas/combinar.png"></a>
+                            <div class="descricao-container">
+                                <a class="descricao-anchor" href="/combinar/<%= comb.id %>">
+                                    <div class="titulo line"><%= comb.nome %></div>
+                                    <div class="autor"><%= comb.autor %></div>
+                                    <!-- <a class="rank" href="/ranks/questionarios/<%= comb.id %>"><img src="../imagens/icones/rank.png"></a> -->
+                                </a>
+                            </div>
+                        </div>        
+                    <% } %>
+                </div>
+            </div>
+
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+</html>

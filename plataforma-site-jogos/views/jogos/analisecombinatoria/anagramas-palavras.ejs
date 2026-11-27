@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../../templates/head.html')%>
+    <script src="../../../scripts/jogos/anagramas-palavras.js" defer type="module"></script>
+    <link href="../../../css/anagramas-palavras.css" rel="stylesheet">
+</head>
+
+<body class="bg-light"> 
+    <%- include('../../templates/header.html') %>
+
+    <main>
+        <div id="main-container" class="container py-5">
+            
+            <div class="card shadow-sm mx-auto mt-4" style="max-width: 600px;">
+                <div class="card-body text-center p-4">
+                    
+                    <header class="mb-4">
+                        <p class="lead">Anagramas para Palavra<br/>
+                            <strong id="palavra-display" class="text-primary fs-3 letter-spacing-2">...</strong>
+                        </p>
+                    </header>
+
+                    <div class="d-flex justify-content-center gap-1 mb-4">
+                        Encontrados <div id="contador-atual">0</div>/<span id="total-possivel">0</span>
+                    </div>
+
+                    <div class="input-group mb-3 justify-content-center">
+                        <input type="text" id="input-tentativa" class="form-control form-control-lg text-center text-uppercase fw-bold" autocomplete="off" style="max-width: 250px;">
+                        <button id="btn-verificar" class="btn btn-primary btn-lg">Verificar</button>
+                    </div>
+
+                    <div id="mensagem-feedback" class="alert feedback-placeholder item-novo" role="alert">
+                        Escreva um anagrama acima!
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top">
+                        <h3 class="h5 text-start mb-3 text-muted">Anagramas Encontrados</h3>
+                        <ul id="lista-acertos" class="d-flex flex-wrap gap-2 list-unstyled justify-content-center">
+                        </ul>
+                    </div>
+                    
+                    <div id="vitoria-modal" class="alert alert-success mt-3 d-none">
+                        <h4 class="alert-heading">Parabéns!</h4>
+                        <p>Você encontrou todas as combinações!</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <%- include('../../templates/footer.html') %>
+</body>
+</html>

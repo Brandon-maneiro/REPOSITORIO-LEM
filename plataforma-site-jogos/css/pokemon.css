@@ -1,0 +1,271 @@
+.main-pokemon-container {
+    width: 46rem;
+    height: 34rem;
+    border: 0.3vmin solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    & .batalha-container {
+        width: 100%;
+        height: 75%;
+        position: relative;
+        display: grid;
+        grid-template-areas:
+        'vi ii'
+        'ij vj';
+        justify-items: center;
+        align-items: center;
+        overflow: hidden;
+        & .batalha-image-fundo {            
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated;
+            position: absolute;
+            object-fit: cover
+        };
+        & .jogador-img, .inimigo-img {
+            -webkit-user-drag: none;
+            align-self: end;
+            width: 10rem;
+            aspect-ratio: 1/1;
+            z-index: 3;
+            image-rendering: pixelated;
+        };
+        & .jogador-vida {
+            grid-template-areas: 
+            'n l'
+            '. v'
+            '. hp';
+            aspect-ratio: 11/4;
+        };
+        & .inimigo-vida {
+            grid-template-areas: 
+            'n l'
+            '. v';
+            aspect-ratio: 7/2;
+        };
+        & .jogador-hp {
+            grid-area: hp;
+        }
+        & .jogador-vida, .inimigo-vida {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            padding: 1% 3% 1% 4%;
+            position: relative;
+            justify-items: end;
+            align-items: center;
+            font-weight: bolder;
+            font-size: 1.6rem;
+            width: 18rem;
+            border: 0.35rem solid #1f1f1f;
+            background-color: rgb(255, 250, 223);
+            border-radius: 0.4rem;
+            border-top-left-radius: 1.2rem;
+            border-bottom-right-radius: 1.2rem;            
+            z-index: 3;
+            & .inimigo-nome, .jogador-nome {
+                grid-area: n;
+                justify-self: start;
+            };
+            & .inimigo-hp-bar, .jogador-hp-bar {
+                grid-area: v;
+                position: absolute;
+                width: 10rem;
+                height: 0.8rem;
+                border-radius: 1rem;
+                border: 0.3vmin solid white;
+                background-color: greenyellow;
+                display: flex;
+                align-items: center;
+                &::after {
+                    content: 'HP';
+                    position: absolute;
+                    left: 0;
+                    transform: translateX(-110%);
+                    font-size: 1.2rem;
+                    color: orange;
+                    padding-top: 1%;
+                    z-index: -1;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 12.7rem;
+                    height: 1.4rem;
+                    border-radius: 1rem;
+                    right: -6%;
+                    background-color: #1f1f1f;
+                    z-index: -1;
+                };
+            };
+        };
+        & .jogador-img {
+            animation: jogador-parado 0.5s infinite linear;
+            grid-area: ij;
+        };
+        & .inimigo-img {
+            transform: translateY(35%);            
+            animation: inimigo-parado 0.5s infinite linear;
+            grid-area: ii;
+        };
+        & .jogador-vida {
+            grid-area: vj;
+            transform: translateY(35%);
+        }
+        & .inimigo-vida {
+            grid-area: vi;
+        };
+    }
+    & .textos-container {
+        width: 100%;
+        flex: 1;
+        position: relative;
+        background-color: #1f1f1f;
+        padding: 1.1rem 1.1rem;
+        & .texto-descricao-container {
+            width: 100%;
+            height: 100%;
+            outline: 0.8rem solid rgb(212, 194, 113);
+            border: 0.4rem solid rgb(233, 233, 233);
+            background-color: rgb(27, 56, 95);
+            border-radius: 1rem;
+            display: flex;
+            justify-content: start;
+            align-items: end;
+            padding: 0.3rem 49% 0.3rem 0.3rem;
+            font-size: 2rem;
+            color: white;
+        };
+        & .opcoes-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            gap: 0 16%;
+            border: 1rem #1f1f1f solid;
+            background-color: white;
+            padding: 2% 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            padding-left: 6%;
+            font-size: 1.8rem;
+            align-items: center;            
+            outline: 0.7rem solid rgb(80, 39, 158);
+            outline-offset: -1.4rem;
+            border-radius: 1rem;
+            & .opcao {
+                position: relative;
+                user-select: none;
+                &:hover {
+                    cursor: pointer;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border-right: none;
+                        border-bottom: 0.8rem solid transparent;
+                        border-top: 0.8rem solid transparent;
+                        border-left: 1rem solid black;
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+        }
+        & .ataques-container, .ataque-status-container {
+            height: 100%;
+            position: absolute;            
+            border: 1rem #1f1f1f solid;
+            outline: 0.6rem solid rgb(80, 39, 158);
+            outline-offset: -1rem;
+            background-color: white;
+            border-radius: 0.8rem;
+        }
+        & .ataques-container {
+            width: 65%;
+            top: 0;
+            left: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding-left: 5%;
+            align-items: center;
+            gap: 0 5%;
+            font-size: 1.8rem;
+            & .ataque {
+                position: relative;
+                user-select: none;
+                &:hover {
+                    cursor: pointer;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border-right: none;
+                        border-bottom: 0.8rem solid transparent;
+                        border-top: 0.8rem solid transparent;
+                        border-left: 1rem solid black;
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+        }
+        & .ataque-status-container {
+            width: 36%;
+            right: 0;
+            top: 0;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+            'pp ppv'
+            'tipo .';
+            padding: 1%;
+            align-items: end;
+            & .pp-valor, .pp-text {
+                font-weight: bold;
+            }
+            & .pp-text {
+                font-size: 1.4rem;
+            }
+            & .pp-valor {
+                font-size: 2.2rem;
+                justify-self: end;                
+            }
+            & .tipo {
+                display: flex;
+                align-items: end;
+                font-size: 1.4rem;
+                position: absolute;
+                padding: 2%;
+                & .tipo-valor {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+.invisivel {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+}
+
+@keyframes jogador-parado {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(4%);}
+    100% {transform: translateY(0);}
+}
+
+@keyframes inimigo-parado {
+    0% {transform: translateY(35%);}
+    50% {transform: translateY(39%);}
+    100% {transform: translateY(35%);}
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('templates/head.html')%>
+    <link href="../css/conta.css" rel="stylesheet">
+    <script src="../scripts/site/conta.js" defer></script>
+</head>
+<body>
+    <%- include('templates/header.html') %>
+    <main>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h4 class="card-title text-center mb-3">Cadastrar</h4>
+
+                            <% /* Mensagens de erro/sucesso — manter IDs usados pelo JS */ %>
+                            <div id="error-container" class="<%= (typeof errormessage !== 'undefined' && errormessage) ? 'alert alert-danger alert-dismissible fade show' : 'invisivel' %>" role="alert">
+                                <span id="error-message"><%= typeof errormessage !== 'undefined' ? errormessage : '' %></span>
+                                <% if (typeof errormessage !== 'undefined' && errormessage) { %>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <% } %>
+                            </div>
+
+                            <div id="success-container" class="<%= (typeof successmessage !== 'undefined' && successmessage) ? 'alert alert-success alert-dismissible fade show' : 'invisivel' %>" role="alert">
+                                <span id="success-message"><%= typeof successmessage !== 'undefined' ? successmessage : '' %></span>
+                                <% if (typeof successmessage !== 'undefined' && successmessage) { %>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <% } %>
+                            </div>
+
+                            <form method="post" action="/cadastroAction" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="nome" class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome" required>
+                                    <div class="invalid-feedback">Por favor informe seu nome.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required>
+                                    <div class="invalid-feedback">Por favor informe um email válido.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="senha" class="form-label">Senha</label>
+                                    <input type="password" class="form-control" id="senha" name="senha" required>
+                                    <div class="invalid-feedback">Por favor informe sua senha.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="confirmar_senha" class="form-label">Confirmar Senha</label>
+                                    <input type="password" class="form-control" id="confirmar_senha" name="confirmar_senha" required>
+                                    <div class="invalid-feedback">Por favor confirme sua senha.</div>
+                                </div>
+
+                                <div class="d-grid mb-3">
+                                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                                </div>
+                            </form>
+
+                            <div class="text-center">
+                                <a href="/login">Já possuí uma conta? <strong>Logar</strong></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('templates/footer.html') %>
+    <script>
+        // Bootstrap custom form validation
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+</html>

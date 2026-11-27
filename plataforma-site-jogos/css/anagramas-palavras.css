@@ -1,0 +1,54 @@
+.item-novo {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+.shadow-sm {
+    box-shadow: 0rem 0rem 2rem 3px rgba(0, 0, 0, 0.275) !important;
+}
+
+header{
+    border-radius: 0.4rem;
+    background-color: #4EBF5F;
+    color: whitesmoke ;
+    justify-content: center !important;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.11);
+    min-height: fit-content;
+} 
+
+.mb-4 p.lead {
+    margin: 0%;
+    font-size: 1.25rem;
+    font-weight: 1000;
+} 
+
+.lead strong {
+    color: whitesmoke !important;
+} 
+
+.d-flex.justify-content-center.gap-1.mb-4{
+    margin-bottom: 3.7rem !important;
+}
+
+div.mt-4.pt-3.border-top h3.h5 {
+    font-size: 1.5rem;
+    text-align: center !important;
+}
+
+div.d-flex.justify-content-center.gap-4.mb-4.bg-light.p-3.rounded.border{
+    font-size: 1.5rem;
+}

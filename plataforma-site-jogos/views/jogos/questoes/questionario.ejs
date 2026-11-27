@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../../templates/head.html')%>
+    <link rel="stylesheet" href="../../../css/questoes.css">
+    <script src="../../../scripts/jogos/questionario.js" data-perguntas='<%= quiz.perguntas %>' data-quizId="<%= quiz.id %>" id="data" defer></script>
+</head>
+<body>
+        <%- include('../../templates/header.html') %>
+
+        <main id="quiz-main-container">
+
+            <div id="quiz-container" class="grid4">
+                <div id="contador">1/1</div>
+                <div id="pergunta">Pergunta Teste</div>
+                <div class="a resposta">A. Resposta 1</div>
+                <div class="b resposta">B. Resposta 2</div>
+                <div class="c resposta">C. Resposta 3</div>
+                <div class="d resposta">D. Resposta 4</div>
+            </div>
+
+            <div id="resultado-container">
+                <div id="parabens">Parabéns</div>
+                <p>Sua pontuação:</p>
+                <div id="pontuacao"><div id="pontos">00</div>/<div id="total">00</div></div>
+                <p>Tente outros quizes também e veja como se sairá!</p>
+                <a href="/questoes"><input type="button" value="Voltar aos quizes"></a>
+                <a href="/ranks/questionarios/<%= quiz.id %>">Veja as melhores pontuações deste questionario</a>
+            </div>
+
+        </main>
+
+
+        <%- include('../../templates/footer.html') %>
+</body>
+</html>

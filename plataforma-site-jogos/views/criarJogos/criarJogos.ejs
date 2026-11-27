@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+    <link href="../../css/criarJogos.css" rel="stylesheet">
+    <script src="../scripts/jogos/criarJogos.js" defer></script>
+</head>
+
+<body>
+    <%- include('../templates/header.html') %>
+
+        <main>
+
+            <div id="banner">
+                <div id="titulo">CRIE SEUS JOGOS</div>
+                <div id="texto">Libere sua criatividade criando diversos jogos diferentes</div>
+            </div>
+            
+            <div id="main-container">
+
+                <div id="jogos-container">
+                    <div class="jogo">
+                        <a class="img-anchor" href="/criarCaixa"><img src='../imagens/capas/caixas/provas_ifrs.PNG'></a>
+                        <a class="descricao-anchor" href="/criarCaixa"><div class="titulo line">Caixas</div></a>
+                        <div class="invisivel editar-quiz-container">
+                            <a>
+                                <img src="../imagens/icones/lapis2.png">
+                            </a>
+                            <div class="message invisivel">
+                                <%= message %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jogo">
+                        <a class="img-anchor" href="/criarQuiz"><img src="../imagens/capas/quiz.PNG"></a>
+                        <a class="descricao-anchor" href="/criarQuiz"><div class="titulo line">Quizes</div></a>
+                        <div class="invisivel editar-quiz-container">
+                            <a href="/listarQuizes">
+                                <img src="../imagens/icones/lapis2.png">
+                            </a>
+                            <div class="message invisivel">
+                                <%= message %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jogo">
+                        <a class="img-anchor" href="/criarCombinacao"><img src="../imagens/capas/combinar.PNG"></a>
+                        <a class="descricao-anchor" href="/criarCombinacao"><div class="titulo line">Combinações</div></a>
+                        <div class="invisivel editar-quiz-container">
+                            <a href="/listarCombinacoes">
+                                <img src="../imagens/icones/lapis2.png">
+                            </a>
+                            <div class="message invisivel">
+                                <%= message %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+</html>

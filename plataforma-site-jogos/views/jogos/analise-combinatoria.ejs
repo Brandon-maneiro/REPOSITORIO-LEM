@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link href="../css/maiormenor.css" rel="stylesheet">
+    
+</head>
+    <body>
+        
+        <%- include('../templates/header.html') %>
+
+        <main>
+            <div id="banner">
+                <div id="titulo">ANÁLISE COMBINATÓRIA</div>
+                <div id="texto">Explore permutações, arranjos e combinações</div>
+            </div>
+            
+            <div id="main-container">
+
+                <div id="pesquisa-container">
+                    <input type="text" placeholder="Procurar pelo jogo" id="pesquisar-input">
+                    <div><select id="genero" name="genero">
+                        <option>Gênero</option>
+                    </select></div>
+                    <img src="../imagens/icones/lupa.png">
+                </div>
+
+                <div id="jogos-container">
+                    <div class="jogo">
+                        <a class="img-anchor" href="/anagramas-palavras"><img src="../../imagens/capas/analise-combinatoria/anagramas-1.png"></a>
+                        <a class="descricao-anchor" href="/anagramas-palavras"><div class="titulo line">Descubra os Anagramas</div><div class="autor">Sandro</div></a>
+                    </div>
+
+                    <div class="jogo">
+                        <a class="img-anchor" href="/contagem-roupas"><img src="../../imagens/capas/analise-combinatoria/combinacao-roupas.png"></a>
+                        <a class="descricao-anchor" href="/contagem-roupas"><div class="titulo line">PFC com Roupas</div><div class="autor">Sandro</div></a>
+                    </div>
+
+                    <div class="jogo">
+                        <a class="img-anchor" href="/anagramas-palavras-2"><img src="../../imagens/capas/analise-combinatoria/anagramas-2.png"></a>
+                        <a class="descricao-anchor" href="/anagramas-palavras-2"><div class="titulo line">Calculando Anagramas</div><div class="autor">Sandro</div></a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <%- include('../templates/footer.html') %>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../../templates/head.html')%>
+    <link href="../../../css/quiz.css" rel="stylesheet">
+    <script src="../../../scripts/jogos/quiz.js" type="module"defer></script>    
+</head>
+<body>
+    
+    <%- include('../../templates/header.html') %>
+
+    <main id="quiz">
+
+        <div id="topo">
+            <div><h4>Tempo:</h4><h4 id="timer">00:00</h4></div>
+        </div>
+        <div id="gameBox">
+            <div id="perguntaDiv">
+                <span id="pergunta"></span>
+            </div>
+            <div id="opcoes">
+
+                <input type="button" value="5" class="botao">
+                <input type="button" value="8" class="botao">
+                <input type="button" value="9" class="botao">
+                <input type="button" value="3" class="botao">
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <%- include('../../templates/footer.html') %>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<header>
+    <div id="logo"><img src="../../imagens/icones/lem_site_icon2.png"></div>
+    <div id="info"><a href="/">Início</a><a href="/sobre">Sobre</a><a href="/horarios">Horários</a></div>
+    <div id="mais">
+        <a href="/login"><img src="../../imagens/icones/perfil2.png" <% if (typeof(user) != "undefined") { %>class="filtro-verde"<% } %>></a>
+        <div id="usuario">
+            <% if (typeof(user) == "undefined") {%><% } else {%> Bem vindo(a) <%= user.split(" ")[0] %>! <% } %>
+        </div>
+        <!-- <div id="dropdown">
+            <div id="ponto-div">···</div>
+            <div id="dropdown-content" class="invisivel">
+                Calculadora
+            </div>
+        </div> -->
+    </div>
+</header>

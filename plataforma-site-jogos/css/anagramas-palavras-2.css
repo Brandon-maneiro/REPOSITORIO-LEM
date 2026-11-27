@@ -1,0 +1,50 @@
+#game-area {
+    min-width: 7rem; 
+    align-content: center; 
+}
+
+@media (min-width: 992px) {
+    #game-area {
+        min-width: 60rem; 
+    }
+}
+
+
+
+#status-area {
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+#lives-display {
+    color: red; 
+    letter-spacing: 3px;
+    filter: drop-shadow(1px -1px 0px #000)
+            drop-shadow(-1px 1px 0px #000) 
+            drop-shadow(-1px -1px 0px #000) 
+            drop-shadow(1px 1px 0px #000);
+}
+
+
+#word-section ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.letter-item {
+    display: inline-block;
+    margin: 5px;
+}
+
+.letter-tile {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    width: 60px;
+    height: 60px;
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <link rel="stylesheet" href="../../css/operacao.css">
+        <script src="../../scripts/jogos/operacao2.js" defer></script>
+</head>
+
+<body>
+
+    <%- include('../templates/header.html') %>
+        <main class="py-5 h-75">
+            <div class="container  d-flex align-items-center justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <div class="card shadow-lg border-0"
+                        style="background-color: var(--secondary-color); border-radius: 20px;">
+                        <div class="card-header text-center border-0 pt-5 pb-3">
+                            <h1 class="display-4 fw-bold mb-2"
+                                style="color: var(--terciary-color); text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">DESCUBRA
+                                A OPERAÇÃO</h1>
+                            <p class="lead text-light opacity-75">Complete a equação para chegar ao resultado</p>
+                        </div>
+                        <div class="card-body p-4 p-md-5">
+                            <div
+                                class="equation-container d-flex flex-wrap justify-content-center align-items-center gap-3 mb-5">
+                                <!-- Input A -->
+                                <div class="d-flex flex-column align-items-center">
+                                    <input type="number" id="value1" class="form-control equation-input"
+                                        placeholder="?">
+                                </div>
+
+                                <!-- Operador 1 -->
+                                <select id="operation1" class="form-select equation-select">
+                                    <option value="+" selected>+</option>
+                                    <option value="-">-</option>
+                                    <option value="*">×</option>
+                                    <option value="/">÷</option>
+                                </select>
+
+                                <!-- Value B -->
+                                <div class="equation-value" id="value2">25</div>
+
+                                <!-- Operador 2 -->
+                                <select id="operation2" class="form-select equation-select">
+                                    <option value="+" selected>+</option>
+                                    <option value="-">-</option>
+                                    <option value="*">×</option>
+                                    <option value="/">÷</option>
+                                </select>
+
+                                <!-- Value C -->
+                                <div class="equation-value" id="value3">25</div>
+
+                                <!-- Igual -->
+                                <div class="equation-symbol">=</div>
+
+                                <!-- Resultado -->
+                                <div class="equation-result" id="finalResult">100</div>
+                            </div>
+
+                            <div class="d-grid gap-2 col-8 col-md-6 mx-auto">
+                                <button id="btn-confirmar" class="btn btn-lg fw-bold py-3 hover-scale"
+                                    style="background-color: var(--terciary-color); color: var(--secondary-color); border-radius: 50px; font-size: 1.5rem;">CONFIRMAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal de Feedback -->
+        <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header border-bottom-0">
+                        <h5 class="modal-title" id="feedbackModalLabel">Resultado</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p id="modalMessage" class="fs-4"></p>
+                    </div>
+                    <div class="modal-footer border-top-0 justify-content-center">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                            id="modalBtn">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <script src="../../scripts/jogos/setGame.js" defer></script>
+    <link href="../css/setGame.css" rel="stylesheet">    
+</head>
+<body>
+    
+    <%- include('../templates/header.html') %>
+
+    <main>
+
+        <div id="setgame-container">
+            <div id="setgame-screen">
+                <div id="cards-container">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                </div>
+                <div id="place-cards-container">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="como-jogar-container">
+            <div id="como-jogar">
+                COMO JOGAR
+            </div>
+            <div id="jogo-descricao">
+                Neste jogo o jogador deve formar um padrão com as cartas, o qual dentro de cada categoria seja tudo igual ou tudo diferente.
+                Exemplo: categorias ➡ Cor; Formato; Quantidade; Para vencer devo colocar três cartas de mesma cor, mesmo formato, e mesma quantidade. Também posso vencer com três cartas de mesma cor, três cartas com formatos diferentes e três cartas com quantidades diferentes.
+            </div>
+            <div id="controles">
+                CONTROLES
+            </div>
+            <div id="controles-teclas">
+                Clique na carta para pega-la e clique no espaço vazio para solta-la. 
+            </div>
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('../templates/footer.html') %>
+
+</body>
+</html>

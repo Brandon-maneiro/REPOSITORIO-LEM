@@ -1,0 +1,330 @@
+#fim-container {
+    position: absolute;
+    background-color: rgb(20, 20, 20, 70%);
+    width: 18%;
+    aspect-ratio: 7/9;
+    z-index: 5;
+    border: 0.3vmin solid lightgray;
+    border-radius: 2vmin;
+    display: none;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;    
+    gap: 8%;
+    & #topo {
+        color: var(--primary-color);
+        font-weight: bolder;
+        font-size: 2rem;
+    }
+    & #pontos {
+        color: var(--terciary-color);
+        background-color: var(--secondary-color);
+        padding: 6% 4%;
+        border-radius: 2vmin;
+        font-size: 1.2rem;
+    }
+    & #pontosLabel {
+        color: var(--primary-color);
+        text-decoration: underline;
+        text-decoration-color: var(--terciary-color);
+        font-weight: bolder;
+        
+    }
+    & input {
+        padding: 4% 8%;
+        background-color: var(--terciary-color);
+        border: none;
+        color: var(--primary-color);
+        border-radius: 1vmin;
+        font-size: 1rem;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            filter: contrast(130%);
+        }
+    }
+}
+
+#tetris-main-container {
+    & #tetris-container {
+        height: 70vh;
+        margin: 1%;
+        position: relative;
+        text-align: center;
+        color: white;
+        -webkit-text-stroke: 0.025vmin black;
+        font-weight: bolder;
+
+        & #tetris-canvas {
+            height: 100%;
+            aspect-ratio: 1/2;
+            border: 1.5vmin solid grey;
+            outline: 0.5vmin solid black;
+            border-radius: 3vmin;
+            background-color: black;
+        }
+
+        & #segurar-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            align-items: end;
+            padding-top: 1%;
+            position: absolute;
+            background-color: grey;
+            border: 0.4vmin solid black;
+            border-right-color: grey;
+            height: 27%;
+            width: 45%;
+            left: 0;
+            top: 0;
+            border-top-left-radius: 3vmin;
+            border-bottom-left-radius: 3vmin;
+            transform: translate(-99%, 30%);
+            z-index: 2;
+        }
+
+        & h3 {
+            
+            font-size: 1.8vmin;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+
+
+        & #proximo-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            align-items: start;
+            gap: 2%;
+            padding-top: 1%;
+            position: absolute;
+            right: 0;
+            top: 0%;
+            border: 0.4vmin solid black;
+            border-left-color: grey;
+            transform: translate(99%, 11%);
+            width: 45%;
+            height: 70%;
+            background-color: grey;
+            border-top-right-radius: 3vmin;
+            border-bottom-right-radius: 3vmin;
+        }
+
+        & #pontuacao-container {
+            position: absolute;
+            top: 0%;
+            right: 10%;
+            transform: translateY(-70%);
+            & h3 {
+                font-size: 6vmin;
+                -webkit-text-stroke: 0.3vmin;                
+                -webkit-text-stroke-color: black;                
+            }
+        }
+
+        & .slot {
+            border-radius: 1vmin;
+            width: 90%;
+            aspect-ratio: 1/1;
+            background-color: rgb(0, 72, 94);
+            border: 1vmin solid rgb(0, 88, 104);
+            outline: 0.3vmin solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        & .long-slot {
+            border-radius: 1vmin;
+            width: 90%;
+            height: 60%;
+            background-color: rgb(0, 72, 94);
+            border: 1vmin solid rgb(0, 88, 104);
+            outline: 0.3vmin solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        & .piece-container {
+            position: relative;
+            width: 100%;
+            flex: 1;
+        }
+
+        & .piece {
+            width: 20%;
+            aspect-ratio: 1/1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            outline: 0.3vmin solid black;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                outline: 0.3vmin solid black;
+            }
+        }
+
+        & .b1,
+        .b2 {
+            background-color: blue;
+            &::after {
+                background-color: blue;
+            }
+        }
+
+        & .b1 {
+            transform: translateX(-110%);
+            &::after {                
+                transform: translateY(110%);
+            }
+        }
+
+        & .b2 {
+            transform: translateY(110%);
+            &::after {
+                transform: translateX(110%);
+            }
+        }
+
+
+        & .r1,
+        .r2 {
+            background-color: red;
+            &::after {
+                background-color: red;
+            }
+        }
+        & .g1 {
+            &::after {
+                transform: translateX(110%);
+            }
+        }
+        & .g2 {
+            transform: translateY(110%);
+            &::after {
+                transform: translateX(-110%);
+            }
+        }
+
+        & .g1,
+        .g2 {
+            background-color: green;
+            &::after {
+                background-color: green;
+            }
+        }
+
+        & .r1 {
+            &::after {
+                transform: translateX(-110%);
+            }            
+        }
+        & .r2 {
+            transform: translateY(110%);
+            &::after {
+                transform: translateX(110%);
+            }
+        }
+
+        & .c1,
+        .c2 {
+            background-color: cyan;
+            &::after {
+                background-color: cyan;
+            }
+        }
+
+        & .c1 {
+            transform: translateX(55%);
+            &::after {
+                transform: translateX(110%);
+            }
+        }
+        & .c2 {
+            transform: translateX(-55%);
+            &::after {
+                transform: translateX(-110%);
+            }
+        }
+
+        & .y1,
+        .y2 {
+            background-color: yellow;
+            &::after {
+                background-color: yellow;
+            }
+        }
+
+        & .y1 {
+            transform: translateX(-55%);
+            &::after {
+                transform: translateY(110%);
+            }
+        }
+        & .y2 {
+            transform: translateX(55%);
+            &::after {
+                transform: translateY(110%);
+            }
+        }
+
+        & .p1,
+        .p2 {
+            background-color: purple;
+            &::after {
+                background-color: purple;
+            }
+        }
+        & .p1 {
+            &::after {
+                transform: translate(-110%, 110%);
+            }
+        }
+        & .p2 {
+            transform: translateY(110%);
+            &::after {
+                transform: translateX(110%);
+            }
+        }
+
+        & .o1,
+        .o2 {
+            background-color: orange;
+            &::after {
+                background-color: orange;
+            }
+        }
+
+        & .o1 {
+            transform: translateX(110%);
+            &::after {
+                transform: translateY(110%);
+            }
+        }
+
+        & .o2 {
+            transform: translateY(110%);
+            &::after {
+                transform: translateX(-110%);
+            }
+        }
+
+    }
+
+}

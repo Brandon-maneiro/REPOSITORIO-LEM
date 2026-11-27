@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <link href="../../css/criarJogos.css" rel="stylesheet">
+        <script src='../../scripts/jogos/criarCombinacao.js' defer></script>
+</head>
+
+<body>
+    <%- include('../templates/header.html') %>
+
+        <main>
+            <div id="main-container">
+            <form id="comb-container" method="post" action="/editarCombinacao">
+                <div id='autor-container'>
+                    <label id="img-combinacao"><img src="../../imagens/icones/image.png"><input type="file"></label>
+                    <div id="informacoes-combinacao">
+                        <input name="id" value="<%= combinacoes.id %>" class="invisivel">
+                        <label for="nomeCombinacao">Nome da Combinação</label>
+                        <input type="text" id="nomeCombinacao" name="nomeCombinacao" value="<%= combinacoes.nome %>">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" name="descricao" id="descricao" value="<%= combinacoes.descricao %>"></input>
+                        <label for="nomeAutor">Nome do Autor</label>
+                        <input type="text" name="nomeAutor" id="nomeAutor" value="<%= combinacoes.autor %>">
+                    </div>
+
+                </div>
+                <div id="tabela-container">
+                <table id="perguntas-tabela-container" enctype="multipart/form-data">
+                    <thead>
+                        <th>Nº</th>
+                        <th>Perguntas</th>
+                        <th></th>
+                    </thead>
+                    <tbody id="corpo-tabela">
+                        <% for (const comb in combinacoes.perguntas) { %>
+                        <tr>
+                            <td><%= parseInt(comb) + 1 %></td>
+                            <td>
+                                <div class="pergunta">
+                                    <div class="perguntaDiv"><%= combinacoes.perguntas[comb].pergunta %></div>
+                                    <input type="text" name="perguntas" class="invisivel perguntas" value="<%= combinacoes.perguntas[comb].pergunta %>">
+                                    <input type="text" class="respostas invisivel" name="respostas" value="<%= combinacoes.perguntas[comb].resposta %>">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="img-container">
+                                    <img src="../../imagens/icones/lapis2.png" class="editar" tabindex="0">
+                                    <img src="../../imagens/icones/lixo.png" class="remover" tabindex="0">
+                                </div>
+                            </td>
+                        </tr>
+                        <% } %>
+                        <tr id="adicionar">
+                            <td></td>
+                            <td></td>
+                            <td><img src="../../imagens/icones/adicionar.png" id="adicionar-img" tabindex="0"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <input type="submit" value="Salvar">
+
+                <div id="editar-pergunta-container-combinacao">
+                    <img src="../../imagens/icones/xis.png" id="fechar-edicao">
+                        <div>
+                            <label for="pergunta">Pergunta</label>
+                            <textarea name="pergunta" id="pergunta" cols="30" rows="5"></textarea>
+                        </div>
+                        <div>
+                            <label for="resultado">Resultado</label>
+                            <textarea id="resultado" name="resultado" cols="30" rows="5"></textarea>
+                        </div>
+                </div>
+
+            </form>
+        </div>
+
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+</html>

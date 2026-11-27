@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <link href="../../css/velha.css" rel="stylesheet">
+        <script src="../../scripts/jogos/velha.js" defer></script>
+</head>
+
+<body>
+
+    <%- include('../templates/header.html') %>
+
+        <main>
+
+            <div id="main-container">
+
+                <div id="velhaGameDiv">
+                    <div class="escolha">
+                        <div class="xis">X</div>
+                        <div class="circulo">O</div>
+                    </div>
+                    <div class="player 1">
+                        <h3>Jogador 1</h3>
+                        <h4>Movimentos</h4>  
+                            <div class="movimentos">0</div>
+                         
+                            <h4>Vitórias</h4>
+                            <div class="vitorias">0</div>
+                    </div>
+                    <div id="velhaDiv">
+                        <div class="espaco"></div>
+                        <div class="espaco"></div>
+                        <div class="espaco"></div>
+                        <div class="espaco"></div>
+                        <div class="espaco"></div>
+                        <div class="espaco"></div>
+                        <div class="espaco"></div>
+                        <div class="espaco"></div>
+                        <div class="espaco"></div>
+                    </div>
+                    <div class="player 2">
+                        <h3>Jogador 2</h3>
+                            <h4>Movimentos</h4>  
+                            <div class="movimentos">0</div>
+                         
+                            <h4>Vitórias</h4>
+                            <div class="vitorias">0</div>
+                        
+                    </div>
+                    <div class="escolha">
+                        <div class="circulo">O</div>
+                        <div class="xis">X</div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+
+        <%- include('../templates/footer.html') %>
+
+</body>
+
+</html>

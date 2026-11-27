@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <script src="../../scripts/jogos/brickbreak.js" defer></script>
+        <link href="../css/brickbreak.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <%- include('../templates/header.html') %>
+
+        <main>
+
+            <div id="main-container">
+                <div id="brickbreak-container">
+                    <div id="topo">
+                        <div>
+                            <div>NÍVEL</div>
+                            <div id="nivel">1</div>
+                        </div>
+                        <div>
+                            <div>PONTUAÇÃO</div>
+                            <div id="pontos">00000000</div>
+                        </div>
+                        <div>VIDAS <div id="vidas">
+                                <div class="vida"></div>
+                                <div class="vida"></div>
+                                <div class="vida"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="brickBreakCanvas"></canvas>
+                    <div id="retry-container">
+                        <h2>Fim de Jogo!</h2>
+                        <div>Você fez <div id="retry-pontos">0000000</div> pontos e chegou até o nivel <div
+                                id="retry-nivel">1</div>
+                        </div>
+                        <input type="button" value="Jogar Novamente" id="retry-button">
+                    </div>
+                </div>
+            </div>
+
+            <div id="como-jogar-container">
+                <div id="como-jogar">
+                    COMO JOGAR
+                </div>
+                <div id="jogo-descricao">
+                    Mova a plataforma sem deixar a bola chegar ao chão. Dependendo de onde a bola atingir o jogador, a direção a qual ela será 
+                    lançada vai ser diferente.
+                </div>
+                <div id="controles">
+                    CONTROLES
+                </div>
+                <div id="controles-teclas">
+                    Para a bola se mover: ⬆; Para mover o jogador: ⬅ ➡;
+                </div>
+                </div>
+            </div>
+
+        </main>
+
+        <%- include('../templates/footer.html') %>
+
+</body>
+
+</html>

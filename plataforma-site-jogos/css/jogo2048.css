@@ -1,0 +1,126 @@
+#main-container {
+    height: 70vh;
+    #topo {
+        display: flex;
+        gap: 5px;
+        background-color: #3F3F3F;
+        color: white;
+        padding: 5px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+    }
+    #div2048 {
+        display: flex;
+        flex-direction: column;
+        border: 5px solid rgb(92, 78, 64);
+        background-color: rgb(92, 78, 64);
+        border-radius: 8px;
+        .rows {
+            display: flex;
+        }
+        .bloco {
+            width: 15vmin;
+            aspect-ratio: 1/1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bolder;
+            background-color: rgb(185, 166, 149);
+            border: 5px solid rgb(92, 78, 64);
+            border-radius: 10px;
+            color: white;
+        }
+        .number {
+            background-color: rgb(255, 240, 219);
+            font-size: 40px;
+            color: #29231e;
+        }
+           
+        .small {
+            font-size: 30px;
+        }
+    }  
+}
+
+#fim-container {
+    position: absolute;
+    border: 0.3vmin solid black;
+    border-radius: 2vmin;
+    background-color: rgba(242, 242, 242, 0.8);
+    width: 25%;
+    aspect-ratio: 5/4;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;    
+    & #fim-titulo {
+        font-size: 2rem;
+        color: var(--terciary-color);
+        font-weight: bolder;        
+    }
+    & #grid-pontuacao {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        'm  p'
+        'mt pt';
+        gap: 5%;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        & #movimentos {
+            grid-area: m;
+        }
+        & #pontos {
+            grid-area: p;
+        }
+        & #movimentos, #pontos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5vmin;
+            aspect-ratio: 1/1;
+            background-color: var(--secondary-color);
+            color: var(--terciary-color);
+        }
+
+        & #movimentosText {
+            grid-area: mt;
+        }
+        & #pontosText {
+            grid-area: pt;
+        }
+        & #movimentosText, #pontosText {
+            font-size: 1rem;
+        }
+    }
+    & input {
+        background-color: var(--secondary-color);
+        border: none;
+        color: var(--primary-color);
+        padding: 4% 10%;
+        border-radius: 1vmin;
+        font-size: 1rem;
+        &:hover {
+            cursor: pointer;
+            filter: opacity(95%);
+        }
+    }
+    & a {
+        text-decoration: none;
+        color: var(--fourth-color);
+        font-size: 0.8rem;
+        font-weight: bold;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
+
+      

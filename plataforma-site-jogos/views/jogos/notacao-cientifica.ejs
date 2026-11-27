@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link href="../../css/notacao.css" rel="stylesheet">
+    <script src='../../scripts/site/notacao.js' defer></script>
+</head>
+<body>
+    
+    <%- include('../templates/header.html') %>
+
+    <main>
+        <div id="banner">
+            <div id="titulo">NOTAÇÃO CIENTÍFICA</div>
+            <div id="texto"></div>
+        </div>
+        
+        <div id="main-container">
+
+            <div id="quadro-notacao-container">
+                <span class="base">
+                    <div class="numBase"><input type="number" class="inputNumber" value="10">x10</div>
+                    <div class="expoente">1</div>
+                </span>
+                <input type="range" min="0" max="40" id="rangeInput">
+                <div class="resultado">100</div>
+            </div>
+
+            <div id="pesquisa-container">
+                <input type="text" id="pesquisar-input" placeholder="Procurar pelo jogo">
+                <div><select id="genero" name="genero">
+                    <option>Gênero</option>
+                </select></div>
+                <img src="../imagens/icones/lupa.png">
+            </div>
+
+            <div id="jogos-container">
+                <div class="jogo">
+                    <a class="img-anchor" href="/descubra-notacao"><img src="../imagens/capas/descubra_notacao.PNG"></a>
+                    <a class="descricao-anchor" href="/descubra-notacao"><div class="titulo line">Descubra os Valores</div><div class="autor">LEM</div></a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <%- include('../templates/footer.html') %>
+
+</body>
+</html>

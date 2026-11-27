@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link rel="stylesheet" href="../../css/luzes.css">
+    <script defer src="../../scripts/jogos/luzes.js" type="module"></script>
+</head>
+<body>
+        <%- include('../templates/header.html') %>
+
+        <main>
+            <div id="main-container">
+                <div id="main-luzes-container">
+                    <div id="luzes-container">                    
+                    </div>
+                    <div id="opcoes-container">
+                        <input type="button" value="Recomeçar" class="recomecar-input">
+                        <input type="button" value="Novo Jogo" class="novo-jogo-input">
+                    </div>
+                    <div id="status-container">
+                        <div class="linha">Movimentos: <div class="movimentosText">0</div></div>
+                        <div><div class="linha">Linhas: <div class="linhasText">3</div></div> <input type="range" min="2" max="9" value="3" id="linhas-input"></div>
+                        <div><div class="linha">Colunas: <div class="colunasText">3</div></div> <input type="range" min="2" max="9" value="3" id="colunas-input"></div>
+                    </div>
+                    <span id="vitoria">
+                        <p>Parabéns você conseguiu!</p>
+                        <div id="fechar-vitoria">x</div>
+                    </span>
+                </div>
+            </div>
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+</html>

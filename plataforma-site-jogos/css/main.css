@@ -1,0 +1,669 @@
+:root {
+    --header-height: 8vh;
+    --footer-height: 24vh;
+    --primary-color: #f2f2f2;
+    --secondary-color: #0D0D0D;
+    --terciary-color: #4EBF5F;
+    --fourth-color: #BF3636;
+}
+
+#banner, footer{
+    background-color: #0D0D0D;
+}
+#titulo-jogoslem{
+    color: #4EBF5F;
+}
+/* Melhor responsividade para os cards de jogos */
+/* Usa utilitários do Bootstrap (ratio) + object-fit para cortar imagens mantendo proporção */
+.card {
+    /* remove largura fixa para que as colunas controlem o tamanho */
+    width: 100%;
+}
+
+/* Garante que a imagem cubra toda a área do card sem distorcer */
+.card .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Alturas responsivas para a área da imagem (ajustáveis) */
+.card-image-wrapper {
+    height: 160px;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .card-image-wrapper { height: 180px; }
+    #banner>.col{
+        padding-left: 7%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-image-wrapper { height: 220px; }
+}
+
+/* Garantir que o item flexível possa encolher corretamente e permitir truncamento */
+.card .flex-grow-1 { min-width: 0; }
+
+/* Título do jogo: limitar a 2 linhas com reticências (fallback para navegadores sem suporte) */
+.card .game-title {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+/* Ajustes de tipografia para telas pequenas para evitar overflow visual */
+@media (max-width: 575.98px) {
+    .card .game-title { font-size: 1rem; }
+}
+
+/* Tamanho do ícone de ranking: usar max-height para evitar overflow em cards baixos */
+.rank-icon {
+    width: 36px;
+    height: auto;
+    max-height: 40px;
+    object-fit: contain;
+    display: block;
+}
+@media (min-width: 576px) {
+    .rank-icon { width: 42px; max-height: 48px; }
+}
+@media (min-width: 768px) {
+    /* em telas médias, reduzimos um pouco para garantir que caiba no card */
+    .rank-icon { width: 48px; max-height: 56px; }
+}
+
+/* Proteção extra: manter o card como bloco com overflow oculto evita artefatos visuais */
+.card { overflow: hidden; }
+
+.navbar-toggler { color: var(--bs-success); }
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+*, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.test {
+    background-color: red;
+    border: 3vmin black solid;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 2%;
+    height: var(--header-height);    
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--terciary-color);
+    z-index: 2;    
+    border-bottom: 0.4vmin solid var(--secondary-color);
+    & #logo, img {
+        height: 115%;        
+        transform: translateY(-3%);
+    }
+    & #info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30%;
+        font-size: 2.2vmin;
+        font-weight: bolder;
+        height: 100%;
+        & a {            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10%;
+            height: 100%;
+            text-decoration: none;
+            color: var(--terciary-color);
+            &:hover {
+                cursor: pointer;
+                background-color: var(--secondary-color);
+            }
+        }
+    }
+    & #mais {
+        font-size: 4vmin;
+        font-weight: bolder;
+        color: var(--fourth-color);
+        padding: 1%;
+        height: 100%;
+        display: flex;
+        gap: 5%;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        & a:hover, #ponto-div:hover {
+            cursor: pointer;
+        }
+        & a, img {
+            height: 100%;
+        }
+        & a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        & #dropdown-content {
+            position: absolute;
+            right: 0;
+            top: -0.3vmin;
+            background-color: var(--primary-color);
+            margin-top: var(--header-height);
+            height: 30%;
+            width: 10%;            
+            justify-content: end;
+            align-items: start;
+            padding: 1%;
+            border-bottom-left-radius: 1vmin;
+            font-size: 2vmin;
+            border: 0.3vmin solid var(--secondary-color);
+            border-right: none;
+            border-top: none;
+            z-index: 2;
+        }
+        & .invisivel {
+            display: none;
+        }
+        & .visivel {
+            display: flex;
+        }
+        & #usuario {
+            display: flex;
+            font-size: 2vmin;
+            text-wrap: nowrap;
+            justify-content: center;
+            color: var(--terciary-color);
+        }
+        & .filtro-verde {
+            filter: invert(85%) sepia(4%) saturate(7140%) hue-rotate(67deg) brightness(85%) contrast(72%);
+        }
+    }
+    & .pagina-atual {
+        background-color: var(--secondary-color);
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 0.4vh;
+            background-color: var(--fourth-color);
+        }
+    }
+}
+
+#maratona-container {
+    margin-bottom: 4%;
+    width: 100%;
+    text-align: center;
+    & a {
+        margin: auto;
+        border-bottom: 1.5vmin solid var(--terciary-color);
+    }
+    & img {        
+        width: 25%;
+    }    
+}
+
+main {
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    width: 100%;
+    background-color: var(--primary-color);
+
+    & #sobre-container {
+        padding: 5% 0% 5%  10%;
+        width: 85%;        
+        text-align: justify;
+        display: grid;
+        grid-template-columns: 1.5fr 1.5fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-auto-flow: column;
+        grid-template-areas: 
+        'i e p' 
+        '. . u';
+        gap: 2% 10%;
+        line-height: 3.3vmin;
+        & li {
+            margin-left: 4%;
+        }
+        & #equipe {
+            grid-area: e;            
+            > * {
+                line-height: 140%;
+                font-size: 2.4vmin;
+            }
+        }
+        & img {
+            grid-area: i;
+            width: 100%;
+            transform: translateY(-25%);
+        }
+        
+        > ul {
+            grid-area: u;
+            font-size: 2.2vmin;
+        }
+        & .categoria {
+            color: var(--terciary-color);
+            font-weight: bold;
+            margin: 3% 0%;
+            font-size: 2.8vmin;
+        }
+    }
+
+    & #horarios-container {
+        padding: 5%;
+        display: grid;        
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 15% 1fr;
+        grid-auto-flow: column;
+        gap: 2%;
+        & span {
+            color: var(--terciary-color);
+            font-weight: bold;
+            text-align: center;
+        }
+        & table {
+            border-collapse: collapse;
+            width: 100%;
+            & td, th {
+                border: 0.3vmin solid var(--secondary-color);
+                padding: 1%;
+            }
+        }        
+    }    
+    @media screen and (max-width: 800px) {
+        #horarios-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 3% 1fr 3% 1fr;
+            gap: 3%;
+            & table {
+                width: 100%;
+            }
+        }
+    }
+    & #banner {
+        background-color: var(--secondary-color);
+        width: 100%;
+        padding: 3% 0% 0% 8%;
+        height: 50vh;        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-items: start;
+        & #titulo {
+            font-size: 10vmin;
+            color: var(--terciary-color);
+            font-weight: bolder;
+            text-shadow: 2px 2px black;
+        }
+        & #texto {
+            font-size: 2vmin;
+            color: var(--primary-color);
+            width: 25%;
+            line-height: 130%;
+        }
+        & a {
+            height: 7vh;
+            width: 13vw;
+        }
+        & #criar {
+            width: 100%;
+            height: 100%;
+            padding: 1.3% 2.5%;
+            border-radius: 2vmin;
+            background-color: var(--terciary-color);
+            color: var(--primary-color);
+            font-weight: bolder;
+            font-size: 2vmin;
+            border: none;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        & img {
+            height: 90%;
+            filter: brightness(2000%) saturate(5%);
+        }
+    }
+    @media screen and (orientation: portrait) {
+        #banner {
+            height: 25vh;
+            & a {
+                height: 4vh;
+                width: 25vw;
+            }
+            & #texto {
+                width: 35%;
+            }
+        }
+    }    
+
+    & #main-container {
+        padding: 4% 0%;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & #pesquisa-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3.5vh;
+            width: 40%;
+            margin-bottom: 2%;
+            & input, div, select {
+                height: 100%;
+                width: 100%;
+                font-size: 1.7vmin;                
+            }
+            & input, select {
+                border: 0.2vmin solid grey;
+            }
+            & input {
+                padding-left: 5%;
+                flex-basis: 80%;
+            }
+            & div {
+                flex: 1;                
+            }
+            & img {
+                pointer-events: none;
+                height: 70%;
+                position: absolute;
+                left: 1%;
+            }
+        }
+
+        & #jogos-container {            
+            display: grid;
+            max-width: 100vw;
+            grid-template-columns: repeat(4, 1fr);            
+            padding: 2%;
+            grid-gap: 4rem 1.5rem;
+            & .jogo {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                background-color: var(--secondary-color);
+                border-radius: 1vmin;
+                & .img-anchor, img {
+                    width: 100%;
+                    aspect-ratio: 4/3;
+                }
+                & .img-anchor:hover + .descricao-container > .descricao-anchor > .titulo {
+                    text-decoration: underline;
+                    text-decoration-color: var(--fourth-color);
+                    text-decoration-thickness: 0.3vmin;
+                }
+                & .descricao-anchor {
+                    text-decoration: none;
+                    & .titulo {
+                        font-weight: bolder;
+                        font-size: 2.5vmin;
+                        color: var(--terciary-color);
+                        word-spacing: 100%;
+                        padding-top: 1%;
+                    }
+                    & .autor {
+                        font-size: 2vmin;
+                        color: var(--primary-color);
+                        padding-bottom: 1%;
+                        user-select: text;
+                    }
+                    & .titulo, .autor {
+                        padding-left: 2%;
+                    }
+                    &:hover {
+                        & img {
+                            cursor: pointer;
+                        }
+                        & .titulo {
+                            cursor: pointer;
+                            text-decoration: underline;
+                            text-decoration-color: var(--fourth-color);
+                            text-decoration-thickness: 0.3vmin;
+                        }
+                    }                    
+                }
+                & .descricao-container {
+                    position: relative;
+                    height: 7vh;
+                }
+                & .rank {
+                    position: absolute;
+                    top: 0;
+                    right: 3%;
+                    bottom: 0;
+                    margin: auto;
+                    height: 70%;
+                    aspect-ratio: 1/1;
+                    filter: contrast(0%) brightness(200%);
+                    &:hover {
+                        cursor: pointer;
+                        filter: invert(85%) sepia(4%) saturate(7140%) hue-rotate(67deg) brightness(85%) contrast(72%);
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (orientation: portrait) {
+        #main-container {
+            #pesquisa-container {
+                width: 95%;
+                & input {
+                    padding-left: 7%;
+                }
+                & img {
+                    height: 60%;
+                }
+            }
+        }
+    }
+
+    & #como-jogar-container {
+        width: 30%;
+        height: 45vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2%;
+        gap: 5%;
+        & #como-jogar {
+            color: var(--terciary-color);
+            font-size: 4vmin;
+            font-weight: bold;
+        }
+        & #jogo-descricao {
+            line-height: 170%;
+            font-size: 2vmin;
+            text-align: justify;
+            color: var(--secondary-color);
+        }
+        & #controles {
+            color: var(--terciary-color);
+            font-weight: bold;
+            font-size: 4vmin;
+        }
+        & #controles-teclas {
+            font-size: 2vmin;
+        }
+    }
+    
+}
+
+.tabela-container {
+    width: 45%;
+    height: 32rem;
+    margin: 1%;
+    overflow: auto;
+    .titulo {
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        text-align: center;
+        background-color: var(--fourth-color);
+        border: 0.3vmin solid black;
+        border-bottom: none;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        height: 10%;
+        font-weight: bolder;
+    }
+    .ranks-tabelas {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        margin-bottom: -0.3%;
+        & thead, th {
+            position: sticky;
+            top: 10%;
+            border: none;
+            background-color: var(--terciary-color);
+            color: var(--primary-color);           
+        }
+        & tbody {
+            background-color: white;
+        }
+        & td, th {
+            padding: 1%;
+            text-align: center;
+        }
+        & td {
+            border-right: 0.3vmin solid black;
+            border-bottom: 0.3vmin solid black;
+        }
+        & th {
+            border-top: 0.3vmin solid black;
+            border-right: 0.3vmin solid black;
+            border-bottom: 0.3vmin solid black;
+        }
+        & th:nth-child(1), td:nth-child(1) {
+            border-left: 0.3vmin solid black;
+        }
+        & .pos, .nome {
+            text-align: center;
+        }
+    }
+    .rodape {
+        width: 100%;        
+        height: 0.3vmin;
+        background-color: black;
+        position: sticky;
+        bottom: 0;
+    }
+}
+
+/* Scroll para tabelas longas: limite de altura e rolagem vertical
+   Use adicionando a classe `table-scroll` ao wrapper (p.ex. div.table-responsive.table-scroll)
+*/
+.table-scroll {
+    max-height: 40vh; /* ajustável conforme preferência */
+    overflow-y: auto;
+    display: block; /* garante comportamento de bloco para o overflow */
+}
+
+@media (max-width: 576px) {
+    .table-scroll { max-height: 30vh; }
+}
+
+/* Estilização simples da barra de rolagem para navegadores WebKit */
+.table-scroll::-webkit-scrollbar { width: 10px; }
+.table-scroll::-webkit-scrollbar-track { background: transparent; }
+.table-scroll::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.25); border-radius: 6px; }
+
+
+
+footer {
+    height: var(--footer-height);
+    width: 100%;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--primary-color);
+    gap: 1%;
+    font-size: 2vmin;
+    &::before {
+        content: '';
+        width: 100%;
+        height: 0.5vh;
+        position: absolute;
+        top: 0;
+        background-color: var(--fourth-color);
+    }
+    & #redes {
+        height: 18%;        
+        display: flex;
+        gap: 10%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2%;
+        & a, img {
+            height: 100%;
+            aspect-ratio: 1/1;
+        }
+        & a {
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5%;
+            border-radius: 50%;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    & #sobre {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        gap: 8%;
+        font-size: 20px;
+        > *:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Forçar ícones SVG do footer a ficarem pretos (movido de inline) */
+.footer-icons svg {
+    color: #000 !important; /* usado por fill="currentColor" */
+    fill: currentColor !important;
+}

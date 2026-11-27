@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link rel="stylesheet" href="../../css/hanoi2.css">
+    <script defer src="../../scripts/jogos/hanoi2.js" type="module"></script>
+</head>
+<body>
+        <%- include('../templates/header.html') %>
+
+        <main>
+            <div id="hanoi-main-container">
+                <div id="topo">
+                    <div>Passos: <div id="passos">0</div></div>
+                    <div>Tempo: <div id="timer">00:00</div></div>
+                </div>
+                <div id="hanoi-container">
+                    <div class="pilar">
+                        <div class="bloco n1"></div>
+                        <div class="bloco n2"></div>
+                        <div class="bloco n3"></div>
+                        <div class="bloco n4"></div>
+                        <div class="bloco n5"></div>
+                        <div class="bloco n6"></div>
+                    </div>
+                    <div class="pilar"></div>
+                    
+                    <div class="pilar"></div>
+                </div>
+                <div id="resultado-container">
+                    <div id="titulo">RESULTADOS</div>
+                    <div id="info-grid">
+                        <div id="passosBolha" class="circleBorder">0</div>
+                        <div id="tempoBolha" class="circleBorder">00:0</div>
+                        <div id="passosLabel">Passos</div>
+                        <div id="tempoLabel">Tempo</div>
+                    </div>
+                    
+                    <a href="/ranks/hanoi">Ver rank geral</a>
+                </div>
+            </div>
+            
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+</html>

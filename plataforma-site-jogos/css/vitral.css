@@ -1,0 +1,71 @@
+#vitral-main-container {
+    width: 44rem;
+    aspect-ratio: 10/6;
+    display: flex;
+    background-color: #1f1f1f;
+    justify-content: center;
+    align-items: center;
+    margin: -1%;
+    position: relative;
+    overflow: hidden;
+    & .vitral-grid {
+        --linhas: 3;
+        --colunas: 3;
+        display: grid;
+        height: 70%;
+        aspect-ratio: 1/1;
+        grid-template-columns: repeat(var(--colunas), 88px);
+        grid-template-rows: repeat(var(--linhas), 88px);
+        justify-content: center;
+        align-content: center;
+        border: 0.3vmin solid white;
+        & .grid-slot {
+            border: 0.3vmin solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    & .vitral {
+        --largura: 0px;
+        --altura: 0px;
+        position: absolute;
+        width: var(--largura);
+        height: var(--altura);
+        stroke: black;
+        outline: 0.3vmin solid black;
+        stroke-width: 5px;
+    }
+}
+
+.vermelho {
+    fill: red;
+}
+
+.azul {
+    fill: dodgerblue;
+}
+
+.laranja {
+    fill: orangered;
+}
+
+.amarelo {
+    fill: yellow;
+}
+
+.verde {
+    fill: chartreuse;
+}
+
+.roxo {
+    fill: blueviolet;
+}
+
+.ciano {
+    fill: cyan;
+}
+
+.marrom {
+    fill: brown;
+}

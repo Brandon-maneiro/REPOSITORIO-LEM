@@ -1,0 +1,113 @@
+#main-luzes-container {
+    position: relative;
+    & #opcoes-container, #status-container {
+        display: flex;
+        flex-direction: column;
+        width: 10rem;
+        gap: 2%;
+        padding: 3% 1%;
+        position: absolute;
+        top: 0;
+        background-color: #1f1f1f;
+        color: black;
+        height: 100%;
+        border: 0.4vmin solid black;
+        > div, input[type=button] {           
+            border: 0.2vmin solid white;
+            background-color: white;
+            padding: 5%;
+            border-radius: 0.5vmin;
+            box-shadow: 0px 5px grey;
+            font-size: 1rem;
+        }
+        & input[type=range] {
+            appearance: none;
+            border: 0.3vmin solid #1f1f1f;
+            height: 0.6rem;
+            border-radius: 0.5vmin;
+        }
+        & input::-webkit-slider-thumb {
+            appearance: none;
+            background-color: #111111;
+            border-radius: 50%;
+            height: 1rem;      
+            aspect-ratio: 1/1;
+            cursor: pointer;
+        }
+    }
+    & #opcoes-container {
+        left: 100%;        
+        text-align: center;
+        border-top-right-radius: 1vmin;
+        border-bottom-right-radius: 1vmin;
+        > input:hover {
+            cursor: pointer;
+            box-shadow: 0px 3px grey;
+            transform: translateY(2px);
+            transition: all 0.1s;
+        }
+    }
+    & #status-container {
+        right: 100%;
+        border-top-left-radius: 1vmin;
+        border-bottom-left-radius: 1vmin;
+        .linha {
+            display: flex;
+            gap: 3%;
+        }
+    }
+    & #vitoria {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 25rem;
+        aspect-ratio: 4/2;
+        border-radius: 1vmin;
+        display: flex;
+        visibility: hidden;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        background-color: rgba(48, 80, 80, 70%);
+        > div {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1.4rem;
+            height: 1.4rem;
+            font-size: 1.2rem;
+            background-color: crimson;
+            border-top-right-radius: 1vmin;
+            border-bottom-left-radius: 1vmin;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#luzes-container {
+    --linhas: 5;
+    --colunas: 5;
+    width: 30rem;
+    aspect-ratio: 1/1;
+    border: 0.4vmin solid black;
+    display: grid;
+    grid-template-columns: repeat(var(--colunas), 1fr);
+    grid-template-rows: repeat(var(--linhas), 1fr);
+    .bloco {
+        border: 0.2vmin solid #111111;
+        background-color: #1f1f1f;
+        transition: all 0.1s;
+        &:hover {
+            cursor: pointer;
+            filter: brightness(150%);
+        }
+    }
+    .aceso {
+        background-color: var(--terciary-color);
+    }
+};
+

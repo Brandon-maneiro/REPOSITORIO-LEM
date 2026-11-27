@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../../templates/head.html')%>
+    <link href="../css/combinar.css" rel="stylesheet">    
+    <script src="../../scripts/jogos/combinar.js" defer></script>
+</head>
+<body>
+
+    <%- include('../../templates/header.html') %>
+
+    <main>        
+        <div id="main-container">
+            <div id="combinar-container">
+                <div id="respostas-div">
+                </div>
+                <div id="combinar-div">
+                </div>
+                <div id="final">
+                    <input type="button" value="Finalizar" id="finalizar">
+                </div>
+            </div>
+            <div id="resultado-container">
+                <div id="topo">Parabéns</div>
+                <div>Pontuação final:</div>
+                <div id="resultado"><div id="pontos">0</div>/<div id="total">0</div></div>
+                <div>Teste seus conhecimentos em outros jogos também!</div>
+                <a href="/combinar"><input type="button" value="Mais jogos"></a>
+            </div>
+        </div>
+    </main>
+
+    <%- include('../../templates/footer.html') %>
+    
+</body>
+</html>

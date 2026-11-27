@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <link href="../css/abracaixa.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../templates/header.html') %>
+
+        <main>
+            <div id="banner">
+                <div id="titulo">CAIXAS</div>
+                <div id="texto">Tente acertar as perguntas de todas as cartas</div>
+            </div>
+
+            <div id="main-container">
+
+                <div id="pesquisa-container">
+                    <input type="text" id="pesquisar-input" placeholder="Procurar pelo jogo">
+                    <div><select id="genero" name="genero">
+                        <option>Gênero</option>
+                    </select></div>
+                    <img src="../imagens/icones/lupa.png">
+                </div>
+
+                <div id="jogos-container">
+                    <div class="jogo">
+                        <a class="img-anchor" href="/caixa1"><img src="../imagens/capas/caixas/provas_ifrs.PNG"></a>
+                        <a class="descricao-anchor" href="/caixa1"><div class="titulo line">Provas do IFRS</div><div class="autor">LEM</div></a>
+                    </div>                
+                
+                </div>
+            </div>
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+</html>

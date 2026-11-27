@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link href="../../css/tabuada.css" rel="stylesheet">
+    <script src="../../scripts/jogos/tabuada.js" type="module" defer></script>    
+</head>
+<body>
+    
+    <%- include('../templates/header.html') %>
+    
+    <main>
+        <div id="banner">
+            <div id="titulo">Tabuada Rápida</div>
+            <div id="texto">Tente acertar o máximo de resultados o mais rápido que conseguir</div>
+        </div>
+        <div id="main-container">
+            <div id="tabuada">
+                <div id="topo">
+                    <div><h4>Pontos:</h4><h4 id="pontos">0</h4></div>
+                    <div><h4>Erros:</h4><h4 id="erros">0</h4></div>
+                    <div><h4>Tempo:</h4><h4 id="timer">00:00</h4></div>
+                </div>
+                <div id="gameBox">
+                    
+                    <div id="perguntaDiv">
+
+                        <div id="pergunta">
+                        </div>
+
+                    </div>
+
+                    <div id="opcoes">
+
+                        <input type="button" value="9" class="botao r">
+                        <input type="button" value="12" class="botao b">
+                        <input type="button" value="6" class="botao g">
+                        <input type="button" value="14" class="botao y">
+                        <input type="number" placeholder="Digite o valor da resposta caso prefirir" id="respostaInput" class="e">
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="desafios-container">
+                <div>DESAFIOS</div>
+                <input type="button" value="Ilimitado" class="selecionado desafio" name="ilimitado">
+                <input type="button" value="Sem erros" class="desafio" name="semErros">
+                <input type="button" value="1 - Minuto" class="desafio" name="1min">
+                <input type="button" value="2 - Minutos" class="desafio" name="2min">                
+                <input type="button" value="20 Acertos" class="desafio" name="20acertos">
+                <input type="button" value="50 Acertos" class="desafio" name="50acertos">
+                <input type="button" value="100 Acertos" class="desafio" name="100acertos">
+                <input type="button" id="comecar" value="Começar">
+            </div>
+
+            <div id="resultado-container">
+                <div id="titulo">RESULTADOS</div>
+                <div id="info-grid">
+                    <div id="acertosPontos" class="circleBorder">0</div>
+                    <div id="errosPontos" class="circleBorder">0</div>
+                    <div id="tempoFinal" class="circleBorder">00:0</div>
+                    <div id="acertosLabel">Acertos</div>
+                    <div id="errosLabel">Erros</div>
+                    <div id="tempoLabel">Tempo</div>
+                </div>
+                
+                <a href="/ranks/tabuada">Ver rank geral</a>
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('../templates/footer.html') %>
+
+</body>
+</html>

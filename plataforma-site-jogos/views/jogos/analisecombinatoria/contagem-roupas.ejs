@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../../templates/head.html')%>
+    <script src="../../../scripts/jogos/contagem-roupas.js" defer type="module"></script>
+    <link href="../../../css/contagem-roupas.css" rel="stylesheet">
+</head>
+
+<body class="bg-light"> <%- include('../../templates/header.html') %>
+
+    <main>
+        <div id="main-container" class="container py-5">
+            
+            <div id="game-area" class="row justify-content-center">
+                <div class="col-lg-8"> <div id="status-area" class="d-flex justify-content-between align-items-center p-3 mb-4 bg-white rounded shadow-sm border">
+                        <div class="h5 mb-0">Nível: <span id="level-display" class="badge bg-primary">1</span></div>
+                        <div class="h5 mb-0">Pontos: <span id="score-display" class="fw-bold text-success">0</span></div>
+                        <div class="h5 mb-0">Vidas: <span id="lives-display">❤❤❤</span></div>
+                    </div>
+
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header bg-dark text-white justify-content-center d-flex">
+                            <h3 class="h5 mb-0">Inventário</h3>
+                        </div>
+                        <div class="card-body" id="inventory-section">
+                            
+
+                            <div class="row text-center">
+                                <div class="col-md-4 mb-3" id="shirts-container">
+                                    <h6 class="text-uppercase fw-bold text-secondary border-bottom pb-2">Camisetas</h6>
+                                    <ul id="shirts-list" class="d-flex flex-wrap justify-content-center gap-2 ps-0" style="list-style: none;"></ul>
+                                </div>
+
+                                <div class="col-md-4 mb-3" id="pants-container">
+                                    <h6 class="text-uppercase fw-bold text-secondary border-bottom pb-2">Calças</h6>
+                                    <ul id="pants-list" class="d-flex flex-wrap justify-content-center gap-2 ps-0" style="list-style: none;"></ul>
+                                </div>
+
+                                <div class="col-md-4 mb-3" id="shoes-container" style="display: none;">
+                                    <h6 class="text-uppercase fw-bold text-secondary border-bottom pb-2">Sapatos</h6>
+                                    <ul id="shoes-list" class="d-flex flex-wrap justify-content-center gap-2 ps-0" style="list-style: none;"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4 border-warning">
+                        <div class="card-header bg-warning text-dark">
+                            <h3 class="h5 mb-0">RESTRIÇÃO</h3>
+                        </div>
+                        <div class="card-body bg-light" id="rule-section">
+                            <div id="rule-display">
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm" id="input-section">
+                        <div class="card-body text-center p-4">
+                            <h3 class="h4 mb-3">Quantas combinações são possíveis?</h3>
+                            
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Resposta:</span>
+                                        <input type="number" id="user-answer" class="form-control form-control-lg" >
+                                    </div>
+                                    
+                                    <div class="d-grid gap-2">
+                                        <button id="btn-check" class="btn btn-primary btn-lg">Verificar Resposta</button>
+                                        <button id="btn-next" class="btn btn-success btn-lg" style="display: none;">Próximo Nível</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="feedback-msg" class="mt-3 fs-5 fw-bold"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="game-over-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); z-index: 1050; flex-direction: column; justify-content: center; align-items: center;">
+        <h1 class="display-1 fw-bold text-danger mb-4">FIM DE JOGO</h1>
+        
+        <div class="bg-dark p-5 rounded-3 text-center text-white border border-secondary shadow-lg" style="min-width: 320px;">
+            <h3 class="mb-4">Seus Resultados</h3>
+            <p class="fs-4">Nível Alcançado: <strong id="final-level" class="text-info"></strong></p>
+            <p class="fs-4">Pontuação Final: <strong id="final-score" class="text-warning"></strong></p>
+            <hr class="border-secondary my-4">
+            <button id="btn-restart" class="btn btn-success btn-lg px-5 py-3 fw-bold">
+                🔄 Tentar Novamente
+            </button>
+        </div>
+    </div>
+
+    <%- include('../../templates/footer.html') %>
+</body>
+</html>

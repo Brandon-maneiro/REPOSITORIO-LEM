@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <link href="../../css/criarJogos.css" rel="stylesheet">
+        <script src='../../scripts/jogos/criarQuiz.js' defer></script>
+</head>
+
+<body>
+    <%- include('../templates/header.html') %>
+
+        <main>
+            <div id="main-container">
+            <form id="quiz-container" method="post" action="/criarQuiz">
+                <div id='autor-container'>
+                    <label id="img-questionario"><img src="../../imagens/icones/image.png"><input type="file"></label>
+                    <div id="informacoes-questionario">
+                        <label for="nomeQuestionario">Nome do Questionário</label>
+                        <input type="text" id="nomeQuestionario" name="nomeQuestionario">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" name="descricao" id="descricao"></input>
+                        <label for="nomeAutor">Nome do Autor</label>
+                        <input type="text" name="nomeAutor" id="nomeAutor">
+                    </div>
+
+                </div>
+                <div id="tabela-container">
+                <table id="perguntas-tabela-container" enctype="multipart/form-data">
+                    <thead>
+                        <th>Nº</th>
+                        <th>Perguntas</th>
+                        <th></th>
+                    </thead>
+                    <tbody id="corpo-tabela">
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <div class="pergunta"><div class="perguntaDiv"></div><input type="text" name="perguntas" class="invisivel"></div>
+                                <div class="respostas invisivel">
+                                    <input type="text" name="respostas">
+                                    <input type="text" name="respostas">
+                                    <input type="text" name="respostas">
+                                    <input type="text" name="respostas">
+                                    <input type="text" name="respostas">
+                                    <input type="text" name="respostas">
+                                </div>
+                                <input type="text" class="resposta-certa invisivel" name="respostasCertas" value="">
+                            </td>
+                            <td>
+                                <div class="img-container">
+                                    <img src="../../imagens/icones/lapis2.png" class="editar" tabindex="0">
+                                    <img src="../../imagens/icones/lixo.png" class="remover" tabindex="0">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="adicionar">
+                            <td></td>
+                            <td></td>
+                            <td><img src="../../imagens/icones/adicionar.png" id="adicionar-img" tabindex="0"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <input type="submit" value="Finalizar">
+
+                <div id="editar-pergunta-container">
+                    <img src="../../imagens/icones/xis.png" id="fechar-edicao">
+                    <div id="pergunta-container">
+                        <label for="pergunta">Pergunta</label>
+                        <textarea id="pergunta" name="pergunta"></textarea>
+                    </div>
+                    <div id="respostas-container">
+                        <div>
+                            <label for="resposta1">Resposta 1</label>
+                            <input type="text" id="resposta1" name="resposta">
+                            <input type="radio" name="resposta-radio">                            
+                        </div>
+                        <div>
+                            <label for="resposta2">Resposta 2</label>
+                            <input type="text" id="resposta2" name="resposta">
+                            <input type="radio" name="resposta-radio">
+                        </div>
+                        <div><img tabindex="0" src="../../imagens/icones/adicionar_sem_bg.png" id="adicionar-resposta"></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+
+
+                </div>
+
+            </form>
+        </div>
+
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+</html>

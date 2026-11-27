@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <link rel="stylesheet" href="../../css/nonogram.css">
+        <script src="../../scripts/jogos/nonogram.js" defer></script>
+</head>
+
+<body>
+    <%- include('../templates/header.html') %>
+
+        <main>
+
+            <div class="container-fluid">
+                <div class="row d-flex flex-row justify-content-center py-3 ">
+                    <div class="col-md-3">
+                        <div id="game-header">
+                        <div class="header-section">
+                            <label for="dificuldade">Dificuldade:</label>
+                            <select id="dificuldade" class="form-select">
+                                <option value="5x5">Fácil (5x5)</option>
+                                <option value="10x10">Médio (10x10)</option>
+                                <option value="15x15">Difícil (15x15)</option>
+                            </select>
+                        </div>
+                        <div class="header-section">
+                            <div class="info-item">
+                                <span class="info-label">Tempo:</span>
+                                <span id="timer">00:00</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Erros:</span>
+                                <span id="errors">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col d-flex flex-row justify-content-center gap-2">
+                        <button class="btn  btn-game"  id="novo-jogo">🎮 Novo jogo</button>
+                        <button class="btn  btn-game" id="limpar-tabuleiro">🗑️ Limpar</button>
+                        <button class="btn  btn-game" id="verificar">✅ Verificar</button>
+                    </div>
+                </div>
+                <div class="row" id="game">
+                    <div class="game-container">
+                        <div class="nonogram-wrapper">
+                            <div class="nonogram-corner"></div>
+                            <div class="col-hints" id="col-hints"></div>
+                            <div class="row-hints" id="row-hints"></div>
+                            <div class="nonogram-board" id="nonogram-board"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex flex-row justify-content-center gap-3 mt-3">
+                        <button class="btn btn-success marcador" data-mode="fill" id="marcar-preto">✏️ Preencher</button>
+                        <button class="btn btn-danger marcador" data-mode="cross" id="marcar-x">❌ Marcar</button>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col text-center mb-3" id="game-message" role="status"></div>
+                </div>
+            </div>
+           
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+</html>

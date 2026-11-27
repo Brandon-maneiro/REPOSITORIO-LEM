@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+    <link href="../css/pokemon.css" rel="stylesheet">
+    <script src="../../scripts/jogos/pokemon.js" defer type="module"></script>    
+</head>
+<body>
+        <%- include('../templates/header.html') %>
+
+        <main>
+            
+            <div id="main-container">
+                <div class="main-pokemon-container">
+
+                    <div class="batalha-container">
+                        <img class="batalha-image-fundo" src="../../imagens/pokemon/pokemonFight.png">
+                        <div class="inimigo-vida">
+                            <div class="inimigo-nome">Starmie</div>
+                            <div class="inimigo-nivel">Lv10</div>
+                            <div class="inimigo-hp-bar"></div>
+                        </div>
+                        <img class="inimigo-img" src="../../imagens/pokemon/starmie.png">
+                        <div class="jogador-vida">
+                            <div class="jogador-nome">Charmander</div>
+                            <div class="jogador-nivel">Lv16</div>
+                            <div class="jogador-hp-bar"></div>
+                            <div class="jogador-hp">20/20</div>
+                        </div>
+                        <img class="jogador-img" src="../../imagens/pokemon/charmander.PNG">                        
+                    </div>
+
+                    <div class="textos-container">
+                        <div class="texto-descricao-container ">
+                            O que Charmander fará?
+                        </div>
+                        <div class="opcoes-container ">
+                            <div class="opcao lutar">Lutar</div>
+                            <div class="opcao bolsa">Bolsa</div>
+                            <div class="opcao pokemon">Pokemon</div>
+                            <div class="opcao fugir">Fugir</div>
+                        </div>
+                        <div class="ataques-container invisivel">
+                            <div class="ataque">Pitágoras</div>
+                            <div class="ataque">Geometria</div>
+                            <div class="ataque">Bhaskará</div>
+                            <div class="ataque">-</div>
+                        </div>
+                        <div class="ataque-status-container invisivel">
+                            <div class="pp-text">PP</div> <div class="pp-valor">25/25</div>
+                            <div class="tipo">
+                            <div class="tipo-text">TIPO/</div><div class="tipo-valor">NORMAL</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+    <link rel="stylesheet" href="../../css/editar.css">    
+</head>
+
+<body>
+    <%- include('../templates/header.html') %>
+
+        <main>
+            <div id="main-container">
+            <div id="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>Nome</th><th>Descrição</th><th>Autor</th><th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (const quiz of quizes) {%>
+                        <tr>
+                            <td><%= quiz.id %></td><td><%= quiz.nome_questionario %></td><td><%= quiz.descricao %></td><td><%= quiz.autor %></td><td>
+                                <div><a href="/editarQuiz/<%= quiz.id %>"><img src="../../imagens/icones/lapis2.png"></a>
+                                    <a onclick="removeQuiz('<%= quiz.id %>')"><img src="../../imagens/icones/lixo.png"></a></div></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+<script>
+    function removeQuiz(index) {
+        if (confirm('Tem certeza?')) {
+            fetch('/removerQuiz/' + index, {
+                method: 'POST'
+            }).then(location.reload())
+        }
+    }
+</script>
+
+</html>

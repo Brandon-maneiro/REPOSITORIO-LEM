@@ -1,0 +1,91 @@
+#game-area {
+
+    min-width: 7rem;
+    
+ 
+    align-content: center; 
+}
+
+
+@media (min-width: 992px) {
+    #game-area {
+
+        min-width: 60rem; 
+    }
+}
+
+#lives-display{
+    color: red; 
+    letter-spacing: 3px;
+    filter: drop-shadow(1px -1px 0px #000)
+            drop-shadow(-1px 1px 0px #000) 
+            drop-shadow(-1px -1px 0px #000) 
+            drop-shadow(1px 1px 0px #000);
+}
+
+#status-area{
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+#inventory-section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    
+} ul{
+    list-style-type: none;
+    text-align: left;
+}
+
+
+
+.clothing-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+    background-color: #ccc;
+    
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    filter: drop-shadow(0px 0px 1px #000) drop-shadow(0px 0px 1px #000);
+}
+
+
+.icon-shirt {
+    -webkit-mask-image: url('/imagens/icones/camiseta.svg');
+    mask-image: url('/imagens/icones/camiseta.svg');
+    filter: drop-shadow(0px 0px 1px #000) drop-shadow(0px 0px 1px #000);
+}
+
+.icon-pants {
+    -webkit-mask-image: url('/imagens/icones/calca.svg');
+    mask-image: url('/imagens/icones/calca.svg');
+}
+
+.icon-shoe {
+    -webkit-mask-image: url('/imagens/icones/tenis.svg');
+    mask-image: url('/imagens/icones/tenis.svg');
+}
+
+#inventory-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>
+        <link href="../css/snake.css" rel="stylesheet">
+        <script src="../../scripts/jogos/snake.js" defer></script>
+</head>
+
+<body>
+
+    <%- include('../templates/header.html') %>
+        <main>
+            <div id="main-container">
+                <div id="snake-container">
+                    <canvas id="snakeGame"></canvas>
+                    <div id="retry-container">
+                        <h2>Fim de Jogo!</h2>
+                        <div>Você comeu <div id="retry-macas">0</div>
+                            <div>Maçãs</div>
+                        </div>
+                        <input type="button" value="Jogar novamente" id="retry-button">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('../templates/footer.html') %>
+
+</body>
+
+</html>

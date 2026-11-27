@@ -1,0 +1,210 @@
+#frascos-container {
+    
+    width: 68vw;
+    height: 38vw;
+    padding: 2% 12%;
+    background-color: rgb(32, 54, 54);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-evenly;
+    gap: 5%;
+    box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.534), 0 0px 100px 0 rgba(0, 0, 0, 0.116);
+
+    & .frasco {  
+        box-shadow: 10px 10px 300px 5px rgba(135, 206, 250, 0.767);    
+        box-sizing: content-box;
+        width: 2.5vw;
+        aspect-ratio: 1/3.2;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        padding-bottom: 1%;
+        gap: 1%;
+        border: 0.3vmin solid white;
+        border-top: none;
+        border-bottom-right-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+        background-color: rgba(255, 255, 255, 8%);
+        position: relative;
+        transition: all 0.3s;
+        
+        &:hover {
+            cursor: pointer;
+            border-color: yellow;
+            &::before {
+                border-color: yellow;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 130%;
+            transform: translateY(-107%);
+            height: 12%;
+            background-color: rgba(255, 255, 255, 8%);
+            border: 0.4vmin solid white;
+            border-radius: 1vmin;
+        }
+        & .bola {
+
+            width: 75%;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            transition: all 0.3s ease;
+        }
+        & .selecionado {
+            position: absolute;
+            transition: all 0.3s ease;
+            top: 0;
+            transform: translateY(-150%);
+        }
+    }
+    & .nivel {
+        
+        display: flex;
+        position: absolute;
+        right: 0%;
+        bottom: 11%;
+        width: 182%;
+        text-align: center;
+        justify-content: center;
+        font: -webkit-mini-control;
+        font-size: 2vw;
+        & input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+        & input, .atual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border: none;
+            width: 3%;
+            aspect-ratio: 1/1;
+            height: 50%;
+        }
+        & input:hover {
+            cursor: pointer;
+        }
+        & .mais {
+            background-color: rgb(230, 46, 33);
+            height: 50%;
+        }
+        & .menos {
+            background-color: rgb(57, 130, 212);
+            height: 50%;
+        }
+        & .iniciar {            
+            font-size: 2.2vw;
+            position: absolute;
+            width: 9%;        
+            height: 100%;    
+            aspect-ratio: 4/1;
+            background-color: var(--terciary-color);
+            color: white;
+            font-weight: bolder;
+            text-transform: uppercase;
+            align-items: first baseline;
+            transform: translateY(100%);
+        }
+    }
+}
+
+.vitoria-container {
+    margin: auto;
+    color: ghostwhite;
+    width: 32rem;
+    height: 15rem;
+    background-color: #50b75f;
+    align-content: center;
+    text-align: center;
+    font-size: 2.8rem;
+    box-shadow: 0px 5px 3rem 17px rgba(0, 0, 0, 0.5), inset 0px 0px 8rem 3px rgb(0 0 0 / 50%);
+    border: #000000d6 0.6rem solid;
+    border-radius: 1rem;
+    text-shadow: #000000f5 -0.1rem 0.1rem 0rem;
+
+} dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(2px); 
+} h1 {
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.botao-fechar-parabenizacao {
+    position: absolute;
+    justify-content: center;
+    top: 0.5rem;
+    right: 0.5rem;  
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+
+    background: none;
+    border: none;
+} .botao-fechar-parabenizacao img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    align-self: auto;
+}
+
+#links-botao-parabenizacao {
+    background-color: #45c0cb;
+    box-shadow: #000000ba 0rem 0rem 1.1rem -0.4rem;
+    margin-top: 1vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding-bottom: 0.71vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    border: white solid 0.15vw;
+    border-radius: 0.6vw;
+} & h1{
+    margin-bottom: 1.8rem;
+}
+
+/* Controle das cores das bolas */
+.vermelho {
+    background-image: radial-gradient(circle at 30% 30%,  rgb(255, 30, 30) 30%, rgb(146, 23, 23) 60%);
+}
+
+.lima {
+    background-image: radial-gradient(circle at 30% 30%,  rgb(153, 255, 0) 30%, rgb(103, 172, 0) 60%);
+}
+
+.verde {
+    background-image: radial-gradient(circle at 30% 30%,  rgb(0, 163, 27) 30%, rgb(0, 117, 20) 60%);
+}
+
+.roxo {
+    background-image: radial-gradient(circle at 30% 30%,  slateblue 30%, darkslateblue 60%);
+}
+
+.ciano {
+    background-image: radial-gradient(circle at 30% 30%,  cyan 30%, darkcyan 60%);
+}
+
+.azul {
+    background-image: radial-gradient(circle at 30% 30%,  rgb(20, 55, 255) 30%, rgb(17, 41, 173) 60%);
+}
+
+.amarelo {
+    background-image: radial-gradient(circle at 30% 30%,  yellow 30%, rgb(165, 165, 0) 60%);
+}
+
+.laranja {
+    background-image: radial-gradient(circle at 30% 30%, rgb(255, 145, 0) 30%, rgb(182, 100, 0) 60%);
+}
+
+.rosa {
+    background-image: radial-gradient(circle at 30% 30%, orchid 30%, darkorchid 60%);
+}
+

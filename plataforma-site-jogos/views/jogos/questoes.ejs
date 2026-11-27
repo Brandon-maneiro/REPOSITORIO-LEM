@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../templates/head.html')%>    
+</head>
+
+<body>
+    <%- include('../templates/header.html') %>
+
+        <main>
+
+            <div id="banner">
+                <div id="titulo">Questionários</div>
+                <div id="texto">Diversos questionários variados com apenas uma alternativa correta</div>
+            </div>
+
+            <div id="main-container">
+
+                <div id="pesquisa-container">
+                    <input type="text" id="pesquisar-input" placeholder="Procurar pelo jogo">
+                    <div><select id="genero" name="genero">
+                        <option>Gênero</option>
+                    </select></div>
+                    <img src="../imagens/icones/lupa.png">
+                </div>
+
+                <div id="jogos-container">
+                    <div class="jogo">
+                        <a class="img-anchor" href="/quiz"><img src="../imagens/capas/quiz.PNG"></a>
+                        <a class="descricao-anchor" href="/quiz">
+                            <div class="titulo line">Quiz</div>
+                            <div class="autor">LEM</div>
+                        </a>
+                    </div>
+                    <% for (const quiz of quizes) {%>
+                        <div class="jogo">
+                                <a class="img-anchor" href="/questoes/<%= quiz.id %>"><img src="../imagens/capas/quiz.PNG"></a>
+                                <div class="descricao-container">
+                                    <a class="descricao-anchor" href="/questoes/<%= quiz.id %>">
+                                        <div class="titulo line"><%= quiz.nome_questionario %></div>
+                                        <div class="autor"><%= quiz.autor %></div>
+                                        <a class="rank" href="/rank-questionario/<%= quiz.id %>"><img src="../imagens/icones/rank.png"></a>
+                                    </a>
+                                </div>
+                        </div>
+        
+                        <% } %>
+                </div>
+            </div>
+
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+
+</html>

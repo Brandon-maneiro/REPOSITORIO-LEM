@@ -1,0 +1,39 @@
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../templates/head.html')%>
+</head>
+<body>
+        <%- include('../templates/header.html') %>
+
+        <main>
+
+            <div id="banner">
+                <div id="titulo">JOGOS DA MEMÓRIA</div>
+                <div id="texto">Vire as cartas e clique nas que sejam iguais</div>
+            </div>
+            
+            <div id="main-container">
+
+                <div id="pesquisa-container">
+                    <input type="text" id="pesquisar-input" placeholder="Procurar pelo jogo">
+                    <div><select id="genero" name="genero">
+                        <option>Gênero</option>
+                    </select></div>
+                    <img src="../imagens/icones/lupa.png">
+                </div>
+
+                <div id="jogos-container">
+                    <div class="jogo">
+                        <a class="img-anchor" href="/memoria1"><img src='../imagens/capas/memoria/memoria1.png'></a>
+                        <a class="descricao-anchor" href="/memoria1"><div class="titulo line">Memória - 1</div><div class="autor">LEM</div></a>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+
+        <%- include('../templates/footer.html') %>
+</body>
+</html>
